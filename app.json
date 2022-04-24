@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "rn-soft-ui-kit-free",
+    "name": "Mekyal",
     "slug": "rn-soft-ui-kit-free",
     "description": "React Native - Soft UI Kit - Free",
     "primaryColor": "#CB0C9F",
@@ -9,7 +9,6 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/mekyal.png",
-      
       "backgroundColor": "#fff"
     },
     "updates": {
@@ -25,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#CB0C9F"
-      }
+      },
+      "package": "com.abdullah95.rnsoftuikitfree"
     },
     "web": {
       "favicon": "./assets/favicon.png"

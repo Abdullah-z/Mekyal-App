@@ -10,13 +10,14 @@ import {
 } from 'react-native-gesture-handler';
 import Button from './Button';
 import {useNavigation} from '@react-navigation/native';
+import {t} from 'i18n-js';
 
 const CompletedOpportunities = () => {
   const {assets, colors, gradients, sizes} = useTheme();
   const navigation = useNavigation();
   return (
     <ScrollView style={{width: '100%'}}>
-      <Block marginTop={sizes.m} paddingHorizontal={sizes.padding}>
+      <Block  paddingHorizontal={sizes.padding}>
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('Details')}>
           <Block card marginTop={sizes.sm}>
@@ -43,7 +44,9 @@ const CompletedOpportunities = () => {
             <Block row marginVertical={sizes.sm}>
               <Block align="center">
                 <Text h5>4,999,948</Text>
-                <Text>Raised Amount (SAR)</Text>
+                <Text>
+                  {t('common.raisedamount')} ({t('common.SAR')})
+                </Text>
               </Block>
             </Block>
 
@@ -58,35 +61,35 @@ const CompletedOpportunities = () => {
               }}>
               <Block align="center">
                 <Text h5>23,200,000</Text>
-                <Text>Valuation</Text>
+                <Text>{t('common.valuation')}</Text>
               </Block>
               <Block align="center">
                 <Text h5>4,999,948</Text>
-                <Text>Max Target</Text>
+                <Text>{t('common.maxtarget')}</Text>
               </Block>
               <Block align="center">
                 <Text h5>116</Text>
-                <Text>Share Price</Text>
+                <Text>{t('common.shareprice')}</Text>
               </Block>
             </Block>
 
             <Block style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
               <Text h5 color={colors.primary} center>
-                Subscriptions
+              {t('common.subscriptions')}
               </Text>
 
               <Block row marginVertical={sizes.sm}>
                 <Block align="center">
                   <Text h5>17,241</Text>
-                  <Text>Average</Text>
+                  <Text> {t('common.average')}</Text>
                 </Block>
                 <Block align="center">
                   <Text h5>499,960</Text>
-                  <Text>Highest</Text>
+                  <Text> {t('common.highest')}</Text>
                 </Block>
                 <Block align="center">
                   <Text h5>1,044</Text>
-                  <Text>Lowest</Text>
+                  <Text> {t('common.lowest')}</Text>
                 </Block>
               </Block>
             </Block>

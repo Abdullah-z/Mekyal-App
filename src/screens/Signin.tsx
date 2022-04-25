@@ -80,7 +80,7 @@ const Signin = () => {
         <Block safe marginTop={sizes.md}>
           <Block>
             <MekyalLogo />
-            {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
+            <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
               <Button
                 width={'25%'}
                 primary
@@ -92,7 +92,7 @@ const Signin = () => {
                   {locale === 'en' ? 'عربي' : 'English'}
                 </Text>
               </Button>
-            </Block> */}
+            </Block>
             <Block>
               <Block
                 flex={0}

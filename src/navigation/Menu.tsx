@@ -94,7 +94,7 @@ const DrawerContent = (
     {name: t('screens.kyc'), to: 'Components', icon: assets.components},
     {
       name: t('screens.transactionHistory'),
-      to: 'Articles',
+      to: 'Transaction History',
       icon: assets.document,
     },
     {name: t('screens.myInvestments'), to: 'Pro', icon: assets.rental},

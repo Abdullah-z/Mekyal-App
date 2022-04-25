@@ -18,6 +18,7 @@ import SignupEntrepreneur from '../screens/SignupEntrepreneur';
 import VideoPlayer from '../screens/VideoPlayer';
 import OpportunityDetails from '../screens/OpportunityDetails';
 import PDFview from '../components/PDFview';
+import TransactionHistory from '../screens/TransactionHistory';
 
 const Stack = createStackNavigator();
 
@@ -90,11 +91,16 @@ export default () => {
         component={VideoPlayer}
         options={{headerShown: true}}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="PDF View"
         component={PDFview}
         options={{headerShown: true}}
-      /> */}
+      />
+       <Stack.Screen
+        name="Transaction History"
+        component={TransactionHistory}
+        options={{headerShown: true}}
+      />
     </Stack.Navigator>
   );
 };

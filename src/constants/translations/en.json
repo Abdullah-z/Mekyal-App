@@ -72,6 +72,12 @@
     "lowest":"Lowest",
     "from":"From",
     "to":"To",
+    "team":"Team",
+    "financialratios":"Financial Ratios",
+    "risks":"Risks",
+    "otherdocuments":"Other Documents",
+    "prospectus":"Prospectus",
+    "viewdocument":"View Document",
     "guests": {
       "one": "1 guest",
       "other": "{{count}} guests",

@@ -1,11 +1,13 @@
 import * as React from 'react';
 import PDFReader from 'rn-pdf-reader-js';
 
-const PDFview = () => {
+const PDFview = (props) => {
+  const pdfurl = props.url;
+
   return (
     <PDFReader
       source={{
-        uri: 'http://www.africau.edu/images/default/sample.pdf',
+        uri: 'https://www.entnet.org/wp-content/uploads/2021/04/Instructions-for-Adding-Your-Logo-2.pdf',
       }}
     />
   );

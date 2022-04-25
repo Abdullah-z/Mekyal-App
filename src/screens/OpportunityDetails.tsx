@@ -29,7 +29,7 @@ const OpportunityDetails = () => {
       <ScrollView>
         <Block color={'#f8f9fa'} paddingTop={sizes.sm}>
           <Block>
-            <VideoPlayer  />
+            <VideoPlayer />
           </Block>
           <Block
             row
@@ -72,7 +72,7 @@ const OpportunityDetails = () => {
                       : {textDecorationLine: 'none'}
                   }
                   font={fonts?.[tab === 1 ? 'medium' : 'normal']}>
-                 {t('common.aboutcompany')}
+                  {t('common.aboutcompany')}
                 </Text>
               </Block>
             </Button>
@@ -100,15 +100,15 @@ const OpportunityDetails = () => {
               </Block>
             </Button>
           </Block>
-
-          {tab === 1 ? (
-            <TabAboutCompany />
-          ) : tab === 2 ? (
-            <TabInvestNow />
-          ) : (
-            <TabDetail />
-          )}
-          {/* products list */}
+          <Block align='center'>
+            {tab === 1 ? (
+              <TabAboutCompany />
+            ) : tab === 2 ? (
+              <TabInvestNow />
+            ) : (
+              <TabDetail />
+            )}
+          </Block>
         </Block>
       </ScrollView>
     </>

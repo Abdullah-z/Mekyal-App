@@ -11,7 +11,7 @@ import * as Progress from 'react-native-progress';
 const TabDetail = () => {
   const {assets, colors, gradients, sizes} = useTheme();
   return (
-    <Block card marginTop={sizes.sm} marginHorizontal={sizes.sm}>
+    <Block card marginTop={sizes.sm} width={'95%'}>
       <Block marginTop={sizes.sm} row align="center">
         <Block align="center">
           <Text h5>4.9M</Text>

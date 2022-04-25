@@ -72,6 +72,12 @@
     "lowest":"أدنى",
     "from":"من",
     "to":"إلى",
+    "team":"الفريق",
+    "financialratios":"البيانات المالية",
+    "risks":"المخاطر",
+    "otherdocuments":"وثائق أخرى",
+    "prospectus":"نشرة الإصدار",
+    "viewdocument":"استعراض المستند",
     "guests": {
       "one": "1 guest",
       "other": "{{count}} guests",

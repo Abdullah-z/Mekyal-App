@@ -3,6 +3,7 @@ import React from 'react';
 import {Block, Button, Input, Text} from '../components';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {ScrollView} from 'react-native-gesture-handler';
+import Popup from '../components/Popup';
 
 const TransactionHistory = () => {
   const {t} = useTranslation();
@@ -10,7 +11,7 @@ const TransactionHistory = () => {
   return (
     <>
       <ScrollView>
-        <Block color={'#f8f9fa'} align={'center'} flex={4}>
+        <Block color={'#f8f9fa'} align={'center'} >
           <Block
             width={'95%'}
             card
@@ -38,36 +39,8 @@ const TransactionHistory = () => {
               Arab National Bank
             </Text>
           </Block>
-
-          <Block card align="center" marginHorizontal={sizes.sm} width={'95%'}>
-            <Text h5 marginTop={sizes.sm} color={colors.primary}>
-              Withdraw Request
-            </Text>
-            <Block width={'100%'}>
-              <Input
-                marginVertical={sizes.sm}
-                autoCapitalize="none"
-                keyboardType="number-pad"
-                placeholder="Amount"
-              />
-              <Input
-                marginBottom={sizes.sm}
-                autoCapitalize="none"
-                keyboardType="default"
-                placeholder="Message"
-              />
-
-              <Button
-                width={'50%'}
-                primary
-                solid
-                marginVertical={sizes.s}
-                marginHorizontal={'25%'}>
-                <Text bold primary transform="uppercase" color={'#fff'}>
-                  Submit
-                </Text>
-              </Button>
-            </Block>
+          <Block>
+            <Popup />
           </Block>
 
           <Block

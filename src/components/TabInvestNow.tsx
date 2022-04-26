@@ -1,12 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
+import Modal from './Modal';
+import Popup from './Popup';
 
 const TabInvestNow = () => {
   return (
     <View>
-      <Text>TabInvestNow</Text>
+      <Popup />
     </View>
-  )
-}
+  );
+};
 
-export default TabInvestNow
+export default TabInvestNow;

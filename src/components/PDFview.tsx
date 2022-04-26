@@ -1,16 +1,25 @@
 import * as React from 'react';
-import PDFReader from 'rn-pdf-reader-js';
+import {View, Linking} from 'react-native';
 
-const PDFview = (props) => {
-  const pdfurl = props.url;
+// import {WebView} from 'react-native-webview';
+import Button from './Button';
+import Text from './Text';
+
+export default function PDFview() {
+  //   const pdfUrl =
+  //     'src="https://drive.google.com/file/d/1nw8AQ8PsdL7MyF7e4Qir4bcvrm4DgCtZ/view"';
+
+  const openLink = () => {
+    Linking.openURL(
+      'https://drive.google.com/file/d/1nw8AQ8PsdL7MyF7e4Qir4bcvrm4DgCtZ/view',
+    );
+  };
 
   return (
-    <PDFReader
-      source={{
-        uri: 'https://www.entnet.org/wp-content/uploads/2021/04/Instructions-for-Adding-Your-Logo-2.pdf',
-      }}
-    />
+    <View style={{flex: 1, alignItems: 'center'}}>
+      <Button solid primary width={'25%'} onPress={openLink}>
+        <Text>PDF</Text>
+      </Button>
+    </View>
   );
-};
-
-export default PDFview;
+}

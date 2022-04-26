@@ -6,12 +6,10 @@ import {useTheme} from '../hooks/';
 import Text from './Text';
 import * as Progress from 'react-native-progress';
 
-<Progress.Bar progress={0.3} width={200} />;
-
 const TabDetail = () => {
   const {assets, colors, gradients, sizes} = useTheme();
   return (
-    <Block card marginTop={sizes.sm} width={'95%'}>
+    <Block card marginVertical={sizes.sm} width={'95%'} >
       <Block marginTop={sizes.sm} row align="center">
         <Block align="center">
           <Text h5>4.9M</Text>
@@ -24,7 +22,7 @@ const TabDetail = () => {
       </Block>
       <Block align="center" marginVertical={sizes.sm}>
         <Progress.Bar
-          progress={0.85}
+          progress={.9}
           width={250}
           height={10}
           color={colors.primary}
@@ -91,6 +89,18 @@ const TabDetail = () => {
           </Block>
         </Block>
       </Block>
+
+      <Block
+      
+        style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
+        <Block row marginVertical={sizes.sm}>
+          <Block align="center">
+            <Text h5>14</Text>
+            <Text>Current Investors</Text>
+          </Block>
+        </Block>
+      </Block>
+
       <Block row marginVertical={sizes.sm}>
         <Block align="center">
           <Text h5>01-Jun-2021</Text>

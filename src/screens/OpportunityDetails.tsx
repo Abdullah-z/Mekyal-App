@@ -100,7 +100,7 @@ const OpportunityDetails = () => {
               </Block>
             </Button>
           </Block>
-          <Block align='center'>
+          <Block align="center">
             {tab === 1 ? (
               <TabAboutCompany />
             ) : tab === 2 ? (

@@ -78,6 +78,14 @@
     "otherdocuments":"وثائق أخرى",
     "prospectus":"نشرة الإصدار",
     "viewdocument":"استعراض المستند",
+    "remainingamount":"الكمية المتبقية",
+    "sharesallowed":"الأسهم المسموح بها",
+    "minimum":"الحد الأدنى",
+    "maximum":"أقصى",
+    "currentinvestors":"المستثمرين الحاليين",
+     "closed":"مغلق",
+     "withdraw":"انسحب", 
+     "totalbalance":"الرصيد الكلي",
     "guests": {
       "one": "1 guest",
       "other": "{{count}} guests",
@@ -127,6 +135,7 @@
     "login": "Login",
     "extra": "Automotive",
     "shopping": "Shopping Cart"
+    
   },
   "menu": {
     "started": "Getting Started",

@@ -4,6 +4,7 @@ import {Block, Button, Input, Text} from '../components';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {ScrollView} from 'react-native-gesture-handler';
 import Popup from '../components/Popup';
+import TransactionCard from '../components/TransactionCard';
 
 const TransactionHistory = () => {
   const {t} = useTranslation();
@@ -11,7 +12,7 @@ const TransactionHistory = () => {
   return (
     <>
       <ScrollView>
-        <Block color={'#f8f9fa'} align={'center'} >
+        <Block color={'#f8f9fa'} align={'center'}>
           <Block
             width={'95%'}
             card
@@ -20,7 +21,7 @@ const TransactionHistory = () => {
             marginHorizontal={sizes.sm}
             marginVertical={sizes.sm}>
             <Text h5 color={'white'} marginTop={sizes.sm}>
-              Total Balance
+              {t('common.totalbalance')}
             </Text>
             <Block row align="center">
               <Text semibold h3 color={'white'}>
@@ -28,7 +29,7 @@ const TransactionHistory = () => {
               </Text>
               <Text h5 color={'white'}>
                 {' '}
-                SAR
+                {t('common.SAR')}
               </Text>
             </Block>
 
@@ -52,6 +53,7 @@ const TransactionHistory = () => {
             <Text h5 marginTop={sizes.sm} color={colors.primary}>
               Transaction History
             </Text>
+            <TransactionCard />
             <Block width={'100%'}></Block>
           </Block>
         </Block>

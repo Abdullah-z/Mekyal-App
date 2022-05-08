@@ -7,6 +7,7 @@ import Input from './Input';
 import Text from './Text';
 import {useData, useTheme, useTranslation} from '../hooks';
 import {ScrollView} from 'react-native-gesture-handler';
+import { t } from 'i18n-js';
 
 function Popup() {
   const {colors, sizes} = useTheme();
@@ -26,13 +27,13 @@ function Popup() {
         color={colors.primary}
         marginVertical={sizes.s}>
         <Text semibold color={'#fff'}>
-          Withdraw
+          {t("common.withdraw")}
         </Text>
       </Button>
 
-      <Modal isVisible={isModalVisible} style={{alignItems: 'center'}}>
+      <Modal isVisible={isModalVisible} style={{marginHorizontal:'5%',alignItems:'center',marginTop:'50%'}}>
         <ScrollView>
-          <Block card align="center" justify="center" width={'95%'}>
+          <Block card align="center" justify="center">
             <Text h5 marginTop={sizes.sm} color={colors.primary}>
               Withdraw Request
             </Text>

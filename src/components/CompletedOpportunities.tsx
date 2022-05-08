@@ -17,14 +17,14 @@ const CompletedOpportunities = () => {
   const navigation = useNavigation();
   return (
     <ScrollView style={{width: '100%'}}>
-      <Block  paddingHorizontal={sizes.padding}>
+      <Block paddingHorizontal={sizes.padding}>
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('Details')}>
           <Block card marginTop={sizes.sm}>
             <View style={{alignItems: 'center'}}>
               <Image
                 source={{
-                  uri: 'https://dcassetcdn.com/design_img/2646814/76227/76227_14317767_2646814_273806c8_image.png',
+                  uri: 'https://cdn.logojoy.com/wp-content/uploads/2018/05/04120129/1864.png',
                 }}
                 width={'100%'}
                 height={200}
@@ -75,7 +75,7 @@ const CompletedOpportunities = () => {
 
             <Block style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
               <Text h5 color={colors.primary} center>
-              {t('common.subscriptions')}
+                {t('common.subscriptions')}
               </Text>
 
               <Block row marginVertical={sizes.sm}>
@@ -96,11 +96,11 @@ const CompletedOpportunities = () => {
             <Block row marginVertical={sizes.sm}>
               <Block align="center">
                 <Text h5>01-Jun-2021</Text>
-                <Text>From</Text>
+                <Text>{t('common.from')}</Text>
               </Block>
               <Block align="center">
                 <Text h5>31-Jul-2021</Text>
-                <Text>To</Text>
+                <Text>{t('common.to')}</Text>
               </Block>
             </Block>
           </Block>
@@ -143,18 +143,18 @@ const CompletedOpportunities = () => {
             </Block>
             <Block align="center">
               <Text h5>116</Text>
-              <Text>Share Price</Text>
+              <Text>{t('common.shareprice')}</Text>
             </Block>
           </Block>
 
           <Block row marginVertical={sizes.sm}>
             <Block align="center">
               <Text h5>01-Jun-2021</Text>
-              <Text>From</Text>
+              <Text>{t('common.from')}</Text>
             </Block>
             <Block align="center">
               <Text h5>31-Jul-2021</Text>
-              <Text>To</Text>
+              <Text>{t('common.to')}</Text>
             </Block>
           </Block>
         </Block>

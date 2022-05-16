@@ -1,7 +1,7 @@
 import {View} from 'react-native';
 import React from 'react';
 import Block from './Block';
-import {useData, useTheme, useTranslation} from '../hooks/';
+import {useTheme, useTranslation} from '../hooks/';
 import Text from './Text';
 import PDFview from './PDFview';
 
@@ -39,7 +39,6 @@ const TabAboutCompany = () => {
         {t('common.prospectus')}
       </Text>
       <Text color={colors.primary}>{t('common.viewdocument')}</Text>
-      <Block width={'100%'}></Block>
     </Block>
   );
 };

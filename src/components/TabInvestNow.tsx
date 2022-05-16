@@ -6,7 +6,7 @@ import Popup from './Popup';
 const TabInvestNow = () => {
   return (
     <View>
-      <Popup />
+      <Text>Invest Now</Text>
     </View>
   );
 };

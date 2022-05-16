@@ -77,7 +77,6 @@ const Home = () => {
           </Button>
         </Block>
         {tab === 0 ? <ActiveOpportunities /> : <CompletedOpportunities />}
-        {/* products list */}
       </Block>
     </>
   );

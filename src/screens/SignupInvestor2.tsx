@@ -7,7 +7,6 @@ import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
 import {ScrollView} from 'react-native-gesture-handler';
 import MekyalLogo from '../components/MekyalLogo';
-import {color} from 'react-native-reanimated';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -24,7 +23,7 @@ interface IRegistrationValidation {
   agreed: boolean;
 }
 
-const SignupInvestor = () => {
+const SignupInvestor2 = () => {
   const navigate = useNavigation();
   const {isDark} = useData();
   const {t} = useTranslation();
@@ -77,7 +76,7 @@ const SignupInvestor = () => {
       <Block safe marginTop={sizes.md}>
         <Block>
           <MekyalLogo />
-          <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
+          {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
             <Button
               width={'25%'}
               primary
@@ -89,7 +88,7 @@ const SignupInvestor = () => {
                 {locale === 'en' ? 'عربي' : 'English'}
               </Text>
             </Button>
-          </Block>
+          </Block> */}
           <Block>
             <Block
               flex={0}
@@ -103,9 +102,9 @@ const SignupInvestor = () => {
                 overflow="hidden"
                 justify="space-evenly"
                 paddingVertical={sizes.sm}>
-                <Text h4 semibold color={colors.primary}>
+                {/* <Text h3 semibold color={colors.primary}>
                   {t('common.signupas')} {t('common.investor')}
-                </Text>
+                </Text> */}
 
                 <Block
                   row
@@ -121,66 +120,66 @@ const SignupInvestor = () => {
                     marginBottom={sizes.m}
                     // label={t('common.email')}
                     keyboardType="email-address"
-                    placeholder={t('common.email')}
+                    placeholder="ID"
                     success={Boolean(registration.email && isValid.email)}
                     danger={Boolean(registration.email && !isValid.email)}
                     onChangeText={(value) => handleChange({email: value})}
                   />
-                  <Input
-                    autoCapitalize="none"
-                    // label={t('common.email')}
-                    keyboardType="phone-pad"
-                    placeholder={t('common.phonenum')}
-                    onChangeText={(value) => handleChange({email: value})}
-                  />
                   <Text
-                    size={12}
+                    size={18}
                     color={colors.primary}
                     marginBottom={sizes.sm}>
-                    {t('common.phonehelptext')}
+                    Date of Birth (Hijri)
                   </Text>
-                  <Input
-                    marginBottom={sizes.sm}
-                    secureTextEntry
-                    autoCapitalize="none"
-                    // label={t('common.password')}
-                    placeholder={t('common.passwordPlaceholder')}
-                    onChangeText={(value) => handleChange({password: value})}
-                    success={Boolean(registration.password && isValid.password)}
-                    danger={Boolean(registration.password && !isValid.password)}
-                  />
-                  <Input
-                    secureTextEntry
-                    autoCapitalize="none"
-                    // label={t('common.password')}
-                    placeholder={t('common.confirmpassword')}
-                    onChangeText={(value) => handleChange({password: value})}
-                    success={Boolean(registration.password && isValid.password)}
-                    danger={Boolean(registration.password && !isValid.password)}
-                  />
-                  <Text
-                    size={12}
-                    color={colors.primary}
-                    marginBottom={sizes.sm}>
-                    {t('common.passwordhelptext')}
-                  </Text>
+                  <View
+                    style={{
+                      justifyContent: 'flex-start',
+                      flexDirection: 'row',
+                    }}>
+                    <Input
+                      autoCapitalize="none"
+                      maxLength={2}
+                      // label={t('common.email')}
+                      keyboardType="phone-pad"
+                      placeholder="Date"
+                      onChangeText={(value) => handleChange({email: value})}
+                      style={{width: '20%', marginRight: 5}}
+                    />
+                    <Input
+                      autoCapitalize="none"
+                      maxLength={2}
+                      // label={t('common.email')}
+                      keyboardType="phone-pad"
+                      placeholder="Month"
+                      onChangeText={(value) => handleChange({email: value})}
+                      style={{width: '38%', marginRight: 5}}
+                    />
+                    <Input
+                      autoCapitalize="none"
+                      maxLength={4}
+                      // label={t('common.email')}
+                      keyboardType="phone-pad"
+                      placeholder="Year"
+                      onChangeText={(value) => handleChange({email: value})}
+                      style={{width: '38%'}}
+                    />
+                  </View>
                 </Block>
 
-                <Block row flex={0} align="center" paddingHorizontal={sizes.sm}>
+                <Block
+                  align="center"
+                  row
+                  flex={0}
+                  paddingHorizontal={sizes.sm}
+                  marginVertical={sizes.sm}>
                   <Checkbox
                     marginRight={sizes.sm}
                     checked={registration?.agreed}
                     onPress={(value) => handleChange({agreed: value})}
                   />
                   <Text paddingRight={sizes.s}>
-                    {t('common.agreemekyalterms')}{' '}
-                    <Text
-                      semibold
-                      onPress={() => {
-                        Linking.openURL('https://www.creative-tim.com/terms');
-                      }}>
-                      {t('common.terms')}
-                    </Text>
+                    " I Hereby Authorize Mekyal Financial Technologies To Verify
+                    My Personal Data With Elm"
                   </Text>
                 </Block>
 
@@ -191,9 +190,9 @@ const SignupInvestor = () => {
                   shadow={!isAndroid}
                   marginVertical={sizes.s}
                   marginHorizontal={'25%'}
-                  onPress={() => navigation.navigate('Sign Up As Investor 2')}>
+                  onPress={() => navigation.navigate('KYC')}>
                   <Text bold primary transform="uppercase" color={'#fff'}>
-                    {t('common.signup')}
+                    Proceed
                   </Text>
                 </Button>
                 <Block marginVertical={sizes.sm}>
@@ -218,4 +217,4 @@ const SignupInvestor = () => {
   );
 };
 
-export default SignupInvestor;
+export default SignupInvestor2;

@@ -7,7 +7,7 @@ import Input from './Input';
 import Text from './Text';
 import {useData, useTheme, useTranslation} from '../hooks';
 import {ScrollView} from 'react-native-gesture-handler';
-import { t } from 'i18n-js';
+import {t} from 'i18n-js';
 
 function Popup() {
   const {colors, sizes} = useTheme();
@@ -27,11 +27,17 @@ function Popup() {
         color={colors.primary}
         marginVertical={sizes.s}>
         <Text semibold color={'#fff'}>
-          {t("common.withdraw")}
+          {t('common.withdraw')}
         </Text>
       </Button>
 
-      <Modal isVisible={isModalVisible} style={{marginHorizontal:'5%',alignItems:'center',marginTop:'50%'}}>
+      <Modal
+        isVisible={isModalVisible}
+        style={{
+          marginHorizontal: '5%',
+          alignItems: 'center',
+          marginTop: '50%',
+        }}>
         <ScrollView>
           <Block card align="center" justify="center">
             <Text h5 marginTop={sizes.sm} color={colors.primary}>
@@ -55,16 +61,6 @@ function Popup() {
                 <Button
                   width={'40%'}
                   marginHorizontal={sizes.sm}
-                  primary
-                  solid
-                  marginVertical={sizes.s}>
-                  <Text bold primary transform="uppercase" color={'#fff'}>
-                    Submit
-                  </Text>
-                </Button>
-                <Button
-                  width={'40%'}
-                  marginHorizontal={sizes.sm}
                   onPress={toggleModal}
                   primary
                   solid
@@ -72,6 +68,16 @@ function Popup() {
                   marginVertical={sizes.s}>
                   <Text bold primary transform="uppercase" color={'#fff'}>
                     Cancel
+                  </Text>
+                </Button>
+                <Button
+                  width={'40%'}
+                  marginHorizontal={sizes.sm}
+                  primary
+                  solid
+                  marginVertical={sizes.s}>
+                  <Text bold primary transform="uppercase" color={'#fff'}>
+                    Submit
                   </Text>
                 </Button>
               </Block>

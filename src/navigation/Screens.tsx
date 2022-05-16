@@ -19,6 +19,9 @@ import VideoPlayer from '../screens/VideoPlayer';
 import OpportunityDetails from '../screens/OpportunityDetails';
 import PDFview from '../components/PDFview';
 import TransactionHistory from '../screens/TransactionHistory';
+import News from '../screens/News';
+import SignupInvestor2 from '../screens/SignupInvestor2';
+import KYC from '../screens/KYC';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +33,7 @@ export default () => {
     <Stack.Navigator
       screenOptions={screenOptions.stack}
       initialRouteName={'Sign In'}>
+      {/* initialRouteName={'KYC'}> */}
       <Stack.Screen
         name="Home"
         component={Home}
@@ -96,11 +100,24 @@ export default () => {
         component={PDFview}
         options={{headerShown: true}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="Transaction History"
         component={TransactionHistory}
         options={{headerShown: true}}
       />
+
+      <Stack.Screen
+        name="News"
+        component={News}
+        options={{headerShown: true}}
+      />
+
+      <Stack.Screen
+        name="Sign Up As Investor 2"
+        component={SignupInvestor2}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen name="KYC" component={KYC} options={{headerShown: true}} />
     </Stack.Navigator>
   );
 };

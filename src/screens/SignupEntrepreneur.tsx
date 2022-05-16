@@ -77,7 +77,7 @@ const SignupEntrepreneur = () => {
       <Block safe marginTop={sizes.md}>
         <Block>
           <MekyalLogo />
-          <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
+          {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
             <Button
               width={'25%'}
               primary
@@ -89,7 +89,7 @@ const SignupEntrepreneur = () => {
                 {locale === 'en' ? 'عربي' : 'English'}
               </Text>
             </Button>
-          </Block>
+          </Block> */}
           <Block>
             <Block
               flex={0}
@@ -103,7 +103,7 @@ const SignupEntrepreneur = () => {
                 overflow="hidden"
                 justify="space-evenly"
                 paddingVertical={sizes.sm}>
-                <Text h3 semibold color={colors.primary}>
+                <Text h4 semibold color={colors.primary}>
                   {t('common.signupas')} {t('common.entrepreneur')}
                 </Text>
 
@@ -116,6 +116,16 @@ const SignupEntrepreneur = () => {
                   paddingHorizontal={sizes.xxl}></Block>
                 {/* form inputs */}
                 <Block paddingHorizontal={sizes.sm}>
+                  <Input
+                    autoCapitalize="none"
+                    marginBottom={sizes.m}
+                    // label={t('common.email')}
+                    keyboardType="email-address"
+                    placeholder="Bussiness Name"
+                    success={Boolean(registration.email && isValid.email)}
+                    danger={Boolean(registration.email && !isValid.email)}
+                    onChangeText={(value) => handleChange({email: value})}
+                  />
                   <Input
                     autoCapitalize="none"
                     marginBottom={sizes.m}

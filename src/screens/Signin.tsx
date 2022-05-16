@@ -4,12 +4,13 @@ import {useNavigation} from '@react-navigation/core';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
-import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
+import {Block, Button, Input, Image, Text} from '../components/';
 import {
   ScrollView,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 import MekyalLogo from '../components/MekyalLogo';
+import Footer from '../components/Footer';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -33,9 +34,6 @@ const Signin = () => {
   const navigation = useNavigation();
   const {locale, setLocale} = useTranslation();
 
-  const handleLanguageButton = () => {
-    locale === 'en' ? setLocale('ar') : setLocale('en');
-  };
   const [isValid, setIsValid] = useState<IRegistrationValidation>({
     name: false,
     email: false,
@@ -87,9 +85,9 @@ const Signin = () => {
                 outlined
                 shadow={!isAndroid}
                 marginVertical={sizes.s}
-                onPress={() => navigation.navigate('PDF View')}>
+                onPress={() => navigation.navigate('News')}>
                 <Text bold primary transform="uppercase">
-                  {locale === 'en' ? 'عربي' : 'English'}
+                  News
                 </Text>
               </Button>
             </Block>
@@ -189,29 +187,13 @@ const Signin = () => {
                       </Text>
                     </Text>
                   </Block>
-                  <Block
-                    row
-                    style={{
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      backgroundColor: '#fff',
-                    }}>
-                    <Text>
-                      {t('common.footertext')} {'|'}{' '}
-                    </Text>
-                    <Text
-                      semibold
-                      color={colors.primary}
-                      onPress={() => handleLanguageButton()}>
-                      {' '}
-                      {locale === 'en' ? 'عربي' : 'English'}
-                    </Text>
-                  </Block>
                 </Block>
               </Block>
             </Block>
           </Block>
         </Block>
+
+        <Footer />
       </ScrollView>
     </>
   );

@@ -105,7 +105,7 @@ const CompletedOpportunities = () => {
             </Block>
           </Block>
         </TouchableWithoutFeedback>
-        <Block card marginTop={sizes.sm}>
+        {/* <Block card marginTop={sizes.sm}>
           <View style={{alignItems: 'center'}}>
             <Image
               source={{
@@ -157,7 +157,7 @@ const CompletedOpportunities = () => {
               <Text>{t('common.to')}</Text>
             </Block>
           </Block>
-        </Block>
+        </Block> */}
       </Block>
     </ScrollView>
   );

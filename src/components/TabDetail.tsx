@@ -111,7 +111,7 @@ const TabDetail = () => {
       <Block row marginVertical={sizes.sm}>
         <Block align="center">
           <Text h5 color={'red'}>
-            Closed
+            {t('common.closed')}
           </Text>
         </Block>
       </Block>

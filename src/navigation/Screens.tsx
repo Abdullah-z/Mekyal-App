@@ -22,6 +22,9 @@ import TransactionHistory from '../screens/TransactionHistory';
 import News from '../screens/News';
 import SignupInvestor2 from '../screens/SignupInvestor2';
 import KYC from '../screens/KYC';
+import Test from '../screens/Test';
+import KYC2 from '../screens/KYC2';
+import KYC3 from '../screens/KYC3';
 
 const Stack = createStackNavigator();
 
@@ -116,6 +119,21 @@ export default () => {
         name="Sign Up As Investor 2"
         component={SignupInvestor2}
         options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Test"
+        component={Test}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="KYC2"
+        component={KYC2}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="KYC3"
+        component={KYC3}
+        options={{headerShown: true}}
       />
       <Stack.Screen name="KYC" component={KYC} options={{headerShown: true}} />
     </Stack.Navigator>

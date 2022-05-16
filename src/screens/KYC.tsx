@@ -1,20 +1,24 @@
 import {View} from 'react-native';
 import React from 'react';
-import {Block, Text, Input} from '../components';
+import {Block, Text, Input, Button} from '../components';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {ScrollView} from 'react-native-gesture-handler';
-import RadioForm, {
-  RadioButton,
-  RadioButtonInput,
-  RadioButtonLabel,
-} from 'react-native-simple-radio-button';
+import {
+  Center,
+  CheckIcon,
+  FormControl,
+  NativeBaseProvider,
+  Radio,
+  Select,
+  WarningOutlineIcon,
+} from 'native-base';
+
+import {useNavigation} from '@react-navigation/core';
 
 const KYC = () => {
-  const {assets, colors, gradients, sizes} = useTheme();
-  var radio_props = [
-    {label: 'Male', value: 0},
-    {label: 'Female', value: 1},
-  ];
+  const {colors, sizes} = useTheme();
+  const navigation = useNavigation();
+
   return (
     <ScrollView>
       <View style={{margin: (S = sizes.sm)}}>
@@ -29,7 +33,7 @@ const KYC = () => {
         <Block card marginTop={sizes.sm}>
           <View style={{borderBottomWidth: 1, borderBottomColor: 'grey'}}>
             <Text
-              h5
+              h4
               color={colors.primary}
               align="center"
               marginBottom={sizes.sm}>
@@ -84,15 +88,59 @@ const KYC = () => {
                 placeholder=""
                 // onChangeText={(value) => handleChange({password: value})}
               />
+
               <Text bold>Gender</Text>
-              <RadioForm
-                buttonColor={colors.primary}
-                radio_props={radio_props}
-                initial={-1}
-                onPress={(value) => {
-                  this.setState({value: value});
-                }}
-              />
+              <NativeBaseProvider>
+                <Radio.Group
+                  defaultValue="1"
+                  name="myRadioGroup"
+                  color={colors.primary}
+                  accessibilityLabel="Pick your favorite number">
+                  <Radio value="1" my={1}>
+                    Male
+                  </Radio>
+                  <Radio value="2" my={1}>
+                    Female
+                  </Radio>
+                </Radio.Group>
+              </NativeBaseProvider>
+              {/* <Text bold>Country of Birth</Text> */}
+              <NativeBaseProvider>
+                <FormControl w="3/4" maxW="340" isRequired>
+                  <FormControl.Label>Country of Birth</FormControl.Label>
+                  <Select
+                    minWidth="340"
+                    accessibilityLabel="Country of Birth"
+                    placeholder="Country of Birth"
+                    _selectedItem={{
+                      bg: 'teal.600',
+                      endIcon: <CheckIcon size={5} />,
+                    }}
+                    mt="1">
+                    <Select.Item label="Pakistan" value="ux" />
+                    <Select.Item label="Saudi Arabia" value="web" />
+                    <Select.Item label="UAE" value="cross" />
+                    <Select.Item label="Turkey" value="ui" />
+                    <Select.Item label="Qatar" value="backend" />
+                  </Select>
+                  <FormControl.ErrorMessage
+                    leftIcon={<WarningOutlineIcon size="xs" />}>
+                    Please make a selection!
+                  </FormControl.ErrorMessage>
+                </FormControl>
+              </NativeBaseProvider>
+
+              <Button
+                onPress={() => navigation.navigate('KYC2')}
+                width={'50%'}
+                primary
+                solid
+                marginVertical={sizes.s}
+                marginHorizontal={'25%'}>
+                <Text bold primary transform="uppercase" color={'#fff'}>
+                  Proceed
+                </Text>
+              </Button>
             </View>
           </View>
         </Block>

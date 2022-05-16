@@ -7,6 +7,13 @@ import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
 import {ScrollView} from 'react-native-gesture-handler';
 import MekyalLogo from '../components/MekyalLogo';
+import {
+  CheckIcon,
+  FormControl,
+  NativeBaseProvider,
+  Select,
+  WarningOutlineIcon,
+} from 'native-base';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -29,10 +36,21 @@ const SignupInvestor2 = () => {
   const {t} = useTranslation();
   const navigation = useNavigation();
   const {locale, setLocale} = useTranslation();
+  const months = [
+    {name: 'Muharram', value: '1'},
+    {name: 'Safar', value: '2'},
+    {name: 'Rabi al-Awwal', value: '3'},
+    {name: 'Rabi al-Thani', value: '4'},
+    {name: 'Jumada al-Awwal', value: '5'},
+    {name: 'Jumada al-Thani', value: '6'},
+    {name: 'Rajab', value: '7'},
+    {name: 'Shaban', value: '8'},
+    {name: 'Ramadan', value: '9'},
+    {name: 'Shawwal', value: '10'},
+    {name: 'Dhu al-Qadah', value: '11'},
+    {name: 'Dhu al-Hijjah', value: '12'},
+  ];
 
-  const handleLanguageButton = () => {
-    locale === 'en' ? setLocale('ar') : setLocale('en');
-  };
   const [isValid, setIsValid] = useState<IRegistrationValidation>({
     name: false,
     email: false,
@@ -182,6 +200,35 @@ const SignupInvestor2 = () => {
                     My Personal Data With Elm"
                   </Text>
                 </Block>
+
+                <NativeBaseProvider>
+                  <FormControl w="3/4" maxW="340" isRequired>
+                    <FormControl.Label>Month</FormControl.Label>
+                    <Select
+                      minWidth="340"
+                      accessibilityLabel="Month"
+                      placeholder="Month"
+                      _selectedItem={{
+                        bg: 'teal.600',
+                        endIcon: <CheckIcon size={5} />,
+                      }}
+                      mt="1">
+                      {months.map((row) => {
+                        return (
+                          <Select.Item
+                            key={row.value}
+                            label={row.name}
+                            value={row.value}
+                          />
+                        );
+                      })}
+                    </Select>
+                    <FormControl.ErrorMessage
+                      leftIcon={<WarningOutlineIcon size="xs" />}>
+                      Please make a selection!
+                    </FormControl.ErrorMessage>
+                  </FormControl>
+                </NativeBaseProvider>
 
                 <Button
                   width={'50%'}

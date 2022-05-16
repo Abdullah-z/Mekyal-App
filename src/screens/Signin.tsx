@@ -28,7 +28,6 @@ interface IRegistrationValidation {
 }
 
 const Signin = () => {
-  const navigate = useNavigation();
   const {isDark} = useData();
   const {t} = useTranslation();
   const navigation = useNavigation();
@@ -85,9 +84,9 @@ const Signin = () => {
                 outlined
                 shadow={!isAndroid}
                 marginVertical={sizes.s}
-                onPress={() => navigation.navigate('News')}>
+                onPress={() => navigation.navigate('Test')}>
                 <Text bold primary transform="uppercase">
-                  News
+                  Test
                 </Text>
               </Button>
             </Block>

@@ -77,7 +77,7 @@ const SignupInvestor = () => {
       <Block safe marginTop={sizes.md}>
         <Block>
           <MekyalLogo />
-          <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
+          {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
             <Button
               width={'25%'}
               primary
@@ -89,12 +89,12 @@ const SignupInvestor = () => {
                 {locale === 'en' ? 'عربي' : 'English'}
               </Text>
             </Button>
-          </Block>
+          </Block> */}
           <Block>
             <Block
               flex={0}
-              radius={sizes.sm}
-              marginHorizontal="8%"
+              card
+              margin={sizes.sm}
               shadow={!isAndroid} // disabled shadow on Android due to blur overlay + elevation issue
             >
               <Block
@@ -102,23 +102,18 @@ const SignupInvestor = () => {
                 radius={sizes.sm}
                 overflow="hidden"
                 justify="space-evenly"
-                paddingVertical={sizes.sm}>
+                paddingVertical={sizes.sm}
+                >
                 <Text h4 semibold color={colors.primary}>
                   {t('common.signupas')} {t('common.investor')}
                 </Text>
 
-                <Block
-                  row
-                  flex={0}
-                  align="center"
-                  justify="center"
-                  marginBottom={sizes.sm}
-                  paddingHorizontal={sizes.xxl}></Block>
-                {/* form inputs */}
-                <Block paddingHorizontal={sizes.sm}>
+            
+               
+                <Block marginHorizontal={sizes.sm}>
                   <Input
                     autoCapitalize="none"
-                    marginBottom={sizes.m}
+                    marginVertical={sizes.m}
                     // label={t('common.email')}
                     keyboardType="email-address"
                     placeholder={t('common.email')}

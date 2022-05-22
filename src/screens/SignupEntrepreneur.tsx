@@ -93,8 +93,8 @@ const SignupEntrepreneur = () => {
           <Block>
             <Block
               flex={0}
-              radius={sizes.sm}
-              marginHorizontal="8%"
+              card
+              margin={sizes.sm}
               shadow={!isAndroid} // disabled shadow on Android due to blur overlay + elevation issue
             >
               <Block
@@ -102,23 +102,17 @@ const SignupEntrepreneur = () => {
                 radius={sizes.sm}
                 overflow="hidden"
                 justify="space-evenly"
-                paddingVertical={sizes.sm}>
+                marginVertical={sizes.sm}>
                 <Text h4 semibold color={colors.primary}>
                   {t('common.signupas')} {t('common.entrepreneur')}
                 </Text>
 
-                <Block
-                  row
-                  flex={0}
-                  align="center"
-                  justify="center"
-                  marginBottom={sizes.sm}
-                  paddingHorizontal={sizes.xxl}></Block>
+             
                 {/* form inputs */}
                 <Block paddingHorizontal={sizes.sm}>
                   <Input
                     autoCapitalize="none"
-                    marginBottom={sizes.m}
+                    marginVertical={sizes.m}
                     // label={t('common.email')}
                     keyboardType="email-address"
                     placeholder="Bussiness Name"

@@ -25,6 +25,7 @@ import KYC from '../screens/KYC';
 import Test from '../screens/Test';
 import KYC2 from '../screens/KYC2';
 import KYC3 from '../screens/KYC3';
+import KYCForm from '../screens/KYCForm';
 
 const Stack = createStackNavigator();
 
@@ -35,8 +36,8 @@ export default () => {
   return (
     <Stack.Navigator
       screenOptions={screenOptions.stack}
-      initialRouteName={'Sign In'}>
-      {/* initialRouteName={'KYC'}> */}
+      // initialRouteName={'Sign In'}>
+      initialRouteName={'KYC Form'}> 
       <Stack.Screen
         name="Home"
         component={Home}
@@ -133,6 +134,11 @@ export default () => {
       <Stack.Screen
         name="KYC3"
         component={KYC3}
+        options={{headerShown: true}}
+      />
+      <Stack.Screen
+        name="KYC Form"
+        component={KYCForm}
         options={{headerShown: true}}
       />
       <Stack.Screen name="KYC" component={KYC} options={{headerShown: true}} />

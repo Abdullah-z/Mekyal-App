@@ -53,7 +53,7 @@ const KYC = () => {
               <Input
                 secureTextEntry
                 autoCapitalize="none"
-                marginBottom={sizes.m}
+                marginBottom={sizes.sm}
                 label="ID"
                 placeholder="ID"
                 // onChangeText={(value) => handleChange({password: value})}
@@ -67,7 +67,7 @@ const KYC = () => {
               <Input
                 secureTextEntry
                 autoCapitalize="none"
-                marginBottom={sizes.m}
+                marginBottom={sizes.sm}
                 label="ID Expiry Date(Hijri)"
                 placeholder=""
                 // onChangeText={(value) => handleChange({password: value})}
@@ -75,7 +75,7 @@ const KYC = () => {
               <Input
                 secureTextEntry
                 autoCapitalize="none"
-                marginBottom={sizes.m}
+                marginBottom={sizes.sm}
                 label="Date of Birth(G)"
                 placeholder=""
                 // onChangeText={(value) => handleChange({password: value})}
@@ -83,7 +83,7 @@ const KYC = () => {
               <Input
                 secureTextEntry
                 autoCapitalize="none"
-                marginBottom={sizes.m}
+                marginBottom={sizes.sm}
                 label="Name"
                 placeholder=""
                 // onChangeText={(value) => handleChange({password: value})}
@@ -135,7 +135,7 @@ const KYC = () => {
                 width={'50%'}
                 primary
                 solid
-                marginVertical={sizes.s}
+                marginVertical={sizes.sm}
                 marginHorizontal={'25%'}>
                 <Text bold primary transform="uppercase" color={'#fff'}>
                   Proceed

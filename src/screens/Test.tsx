@@ -1,25 +1,19 @@
-import React from 'react';
-import {NativeBaseProvider, Box, HStack, Checkbox, Radio} from 'native-base';
-import {Block} from '../components';
+import React, {useState} from 'react';
+import {Text, TextInput, View} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
-export default function Test() {
+export default () => {
+  const [text, setText] = useState('');
+  console.log(text);
   return (
-    <NativeBaseProvider>
-      <Radio.Group
-        defaultValue="1"
-        name="myRadioGroup"
-        color={colors.primary}
-        accessibilityLabel="Pick your favorite number">
-        <Radio value="1" my={1}>
-          First
-        </Radio>
-        <Radio value="2" my={1}>
-          Second
-        </Radio>
-        <Radio value="3" my={1}>
-          Third
-        </Radio>
-      </Radio.Group>
-    </NativeBaseProvider>
+    <View style={{padding: 10}}>
+      <TextInput
+        style={{height: 40}}
+        placeholder="Type here to translate!"
+        onChangeText={(newText) => setText(newText)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>{text}</Text>
+    </View>
   );
-}
+};

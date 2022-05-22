@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/core';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
-import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
+import {Block, Button, Input, Image, Text} from '../components/';
 import {ScrollView} from 'react-native-gesture-handler';
 import MekyalLogo from '../components/MekyalLogo';
 import {
@@ -13,7 +13,9 @@ import {
   NativeBaseProvider,
   Select,
   WarningOutlineIcon,
+  Checkbox,
 } from 'native-base';
+import Footer from '../components/Footer';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -94,171 +96,128 @@ const SignupInvestor2 = () => {
       <Block safe marginTop={sizes.md}>
         <Block>
           <MekyalLogo />
-          {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
+
+          <Block card margin={sizes.sm}>
+            <Block>
+              <Input
+                autoCapitalize="none"
+                marginBottom={sizes.m}
+                // label={t('common.email')}
+                keyboardType="email-address"
+                placeholder={t('common.id')}
+                success={Boolean(registration.email && isValid.email)}
+                danger={Boolean(registration.email && !isValid.email)}
+                onChangeText={(value) => handleChange({email: value})}
+              />
+              <Text size={18} color={colors.primary} marginBottom={sizes.sm}>
+                {t('common.dob')} ({t('common.hijri')})
+              </Text>
+              <View
+                style={{
+                  justifyContent: 'flex-start',
+                  flexDirection: 'row',
+                }}>
+                <Input
+                  autoCapitalize="none"
+                  maxLength={2}
+                  // label={t('common.email')}
+                  keyboardType="phone-pad"
+                  placeholder={t('common.day')}
+                  onChangeText={(value) => handleChange({email: value})}
+                  style={{width: '20%', marginRight: 5}}
+                />
+                <Input
+                  autoCapitalize="none"
+                  maxLength={2}
+                  // label={t('common.email')}
+                  keyboardType="phone-pad"
+                  placeholder={t('common.month')}
+                  onChangeText={(value) => handleChange({email: value})}
+                  style={{width: '38%', marginRight: 5}}
+                />
+                <Input
+                  autoCapitalize="none"
+                  maxLength={4}
+                  // label={t('common.email')}
+                  keyboardType="phone-pad"
+                  placeholder={t('common.year')}
+                  onChangeText={(value) => handleChange({email: value})}
+                  style={{width: '38%'}}
+                />
+              </View>
+            </Block>
+            <NativeBaseProvider>
+              <View
+                style={{
+                  margin: sizes.sm,
+                  alignItems: 'center',
+                  flexDirection: 'row',
+                }}>
+                <Checkbox
+                  marginRight={1}
+                  shadow={2}
+                  value="test"
+                  accessibilityLabel="This is a dummy checkbox"
+                  defaultIsChecked></Checkbox>
+                <Text> {t('common.agreeelmterms')}</Text>
+              </View>
+
+              <FormControl maxW="340" isRequired>
+                <FormControl.Label>Month</FormControl.Label>
+                <Select
+                  minWidth="200"
+                  accessibilityLabel="Month"
+                  placeholder="Month"
+                  _selectedItem={{
+                    bg: 'teal.600',
+                    endIcon: <CheckIcon size={5} />,
+                  }}
+                  mt="1">
+                  {months.map((row) => {
+                    return (
+                      <Select.Item
+                        key={row.value}
+                        label={row.name}
+                        value={row.value}
+                      />
+                    );
+                  })}
+                </Select>
+                <FormControl.ErrorMessage
+                  leftIcon={<WarningOutlineIcon size="xs" />}>
+                  Please make a selection!
+                </FormControl.ErrorMessage>
+              </FormControl>
+            </NativeBaseProvider>
+
             <Button
-              width={'25%'}
+              width={'50%'}
               primary
-              outlined
+              solid
               shadow={!isAndroid}
               marginVertical={sizes.s}
-              onPress={() => handleLanguageButton()}>
-              <Text bold primary transform="uppercase">
-                {locale === 'en' ? 'عربي' : 'English'}
+              marginHorizontal={'25%'}
+              onPress={() => navigation.navigate('KYC Form')}>
+              <Text bold primary transform="uppercase" color={'#fff'}>
+                Proceed
               </Text>
             </Button>
-          </Block> */}
-          <Block>
-            <Block
-              flex={0}
-              radius={sizes.sm}
-              marginHorizontal="8%"
-              shadow={!isAndroid} // disabled shadow on Android due to blur overlay + elevation issue
-            >
-              <Block
-                flex={0}
-                radius={sizes.sm}
-                overflow="hidden"
-                justify="space-evenly"
-                paddingVertical={sizes.sm}>
-                {/* <Text h3 semibold color={colors.primary}>
-                  {t('common.signupas')} {t('common.investor')}
-                </Text> */}
-
-                <Block
-                  row
-                  flex={0}
-                  align="center"
-                  justify="center"
-                  marginBottom={sizes.sm}
-                  paddingHorizontal={sizes.xxl}></Block>
-                {/* form inputs */}
-                <Block paddingHorizontal={sizes.sm}>
-                  <Input
-                    autoCapitalize="none"
-                    marginBottom={sizes.m}
-                    // label={t('common.email')}
-                    keyboardType="email-address"
-                    placeholder="ID"
-                    success={Boolean(registration.email && isValid.email)}
-                    danger={Boolean(registration.email && !isValid.email)}
-                    onChangeText={(value) => handleChange({email: value})}
-                  />
-                  <Text
-                    size={18}
-                    color={colors.primary}
-                    marginBottom={sizes.sm}>
-                    Date of Birth (Hijri)
-                  </Text>
-                  <View
-                    style={{
-                      justifyContent: 'flex-start',
-                      flexDirection: 'row',
-                    }}>
-                    <Input
-                      autoCapitalize="none"
-                      maxLength={2}
-                      // label={t('common.email')}
-                      keyboardType="phone-pad"
-                      placeholder="Date"
-                      onChangeText={(value) => handleChange({email: value})}
-                      style={{width: '20%', marginRight: 5}}
-                    />
-                    <Input
-                      autoCapitalize="none"
-                      maxLength={2}
-                      // label={t('common.email')}
-                      keyboardType="phone-pad"
-                      placeholder="Month"
-                      onChangeText={(value) => handleChange({email: value})}
-                      style={{width: '38%', marginRight: 5}}
-                    />
-                    <Input
-                      autoCapitalize="none"
-                      maxLength={4}
-                      // label={t('common.email')}
-                      keyboardType="phone-pad"
-                      placeholder="Year"
-                      onChangeText={(value) => handleChange({email: value})}
-                      style={{width: '38%'}}
-                    />
-                  </View>
-                </Block>
-
-                <Block
-                  align="center"
-                  row
-                  flex={0}
-                  paddingHorizontal={sizes.sm}
-                  marginVertical={sizes.sm}>
-                  <Checkbox
-                    marginRight={sizes.sm}
-                    checked={registration?.agreed}
-                    onPress={(value) => handleChange({agreed: value})}
-                  />
-                  <Text paddingRight={sizes.s}>
-                    " I Hereby Authorize Mekyal Financial Technologies To Verify
-                    My Personal Data With Elm"
-                  </Text>
-                </Block>
-
-                <NativeBaseProvider>
-                  <FormControl w="3/4" maxW="340" isRequired>
-                    <FormControl.Label>Month</FormControl.Label>
-                    <Select
-                      minWidth="340"
-                      accessibilityLabel="Month"
-                      placeholder="Month"
-                      _selectedItem={{
-                        bg: 'teal.600',
-                        endIcon: <CheckIcon size={5} />,
-                      }}
-                      mt="1">
-                      {months.map((row) => {
-                        return (
-                          <Select.Item
-                            key={row.value}
-                            label={row.name}
-                            value={row.value}
-                          />
-                        );
-                      })}
-                    </Select>
-                    <FormControl.ErrorMessage
-                      leftIcon={<WarningOutlineIcon size="xs" />}>
-                      Please make a selection!
-                    </FormControl.ErrorMessage>
-                  </FormControl>
-                </NativeBaseProvider>
-
-                <Button
-                  width={'50%'}
-                  primary
-                  solid
-                  shadow={!isAndroid}
-                  marginVertical={sizes.s}
-                  marginHorizontal={'25%'}
-                  onPress={() => navigation.navigate('KYC')}>
-                  <Text bold primary transform="uppercase" color={'#fff'}>
-                    Proceed
-                  </Text>
-                </Button>
-                <Block marginVertical={sizes.sm}>
-                  <Text>
-                    {t('common.alreadyuser')}{' '}
-                    <Text
-                      color={colors.primary}
-                      semibold
-                      onPress={() => {
-                        navigation.navigate('Sign Up As');
-                      }}>
-                      {t('common.signinhere')}
-                    </Text>
-                  </Text>
-                </Block>
-              </Block>
+            <Block marginTop={sizes.sm}>
+              <Text>
+                {t('common.alreadyuser')}
+                <Text
+                  color={colors.primary}
+                  semibold
+                  onPress={() => {
+                    navigation.navigate('Sign Up As');
+                  }}>
+                  {t('common.signinhere')}
+                </Text>
+              </Text>
             </Block>
           </Block>
         </Block>
+        <Footer />
       </Block>
     </ScrollView>
   );

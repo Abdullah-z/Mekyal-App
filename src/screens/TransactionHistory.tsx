@@ -8,7 +8,7 @@ import TransactionCard from '../components/TransactionCard';
 
 const TransactionHistory = () => {
   const {t} = useTranslation();
-  const {assets, colors, fonts, gradients, sizes} = useTheme();
+  const {colors, sizes} = useTheme();
   return (
     <>
       <ScrollView>
@@ -17,7 +17,7 @@ const TransactionHistory = () => {
             width={'95%'}
             card
             align="center"
-            color={colors.primary}
+            color={colors.primary}  
             marginHorizontal={sizes.sm}
             marginVertical={sizes.sm}>
             <Text h5 color={'white'} marginTop={sizes.sm}>

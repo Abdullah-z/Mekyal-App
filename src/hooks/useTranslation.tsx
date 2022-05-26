@@ -15,7 +15,6 @@ export const TranslationProvider = ({
   children: React.ReactNode;
 }) => {
   const [locale, setLocale] = useState('en');
-  console.log(locale);
 
   // Set the locale once at the beginning of your app.
   i18n.locale = locale;
@@ -62,10 +61,5 @@ export const TranslationProvider = ({
     </TranslationContext.Provider>
   );
 };
-
-/*
- * useTranslation hook based on i18n-js
- * Source: https://github.com/fnando/i18n-js
- */
 export const useTranslation = () =>
   useContext(TranslationContext) as ITranslate;

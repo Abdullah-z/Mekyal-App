@@ -16,6 +16,8 @@ import Text from '../components/Text';
 import useTheme from '../hooks/useTheme';
 import Button from '../components/Button';
 import Block from '../components/Block';
+import {Avatar, NativeBaseProvider, HStack} from 'native-base';
+import {Ionicons} from '@expo/vector-icons';
 
 export default () => {
   const {t} = useTranslation();
@@ -24,10 +26,13 @@ export default () => {
   const {icons, colors, gradients, sizes} = useTheme();
   const {locale, setLocale} = useTranslation();
 
+  const handleAvatar = () => {
+    navigation.navigate('Profile');
+  };
+
   const handleLanguageButton = () => {
     locale === 'en' ? setLocale('ar') : setLocale('en');
   };
-
   const menu = {
     headerStyle: {elevation: 0},
     headerTitleAlign: 'left',
@@ -44,17 +49,27 @@ export default () => {
       </Button>
     ),
     headerRight: () => (
-      <Block row flex={0} marginRight={sizes.padding}>
-        <Button
+      <Block row flex={0}>
+        {/* <Button
           color={'#fff'}
           marginBottom={sizes.sm}
           marginTop={sizes.base}
           style={{borderColor: '#00a69c'}}
-          width={'150%'}
+          width={'30%'}
           onPress={handleLanguageButton}>
           <Text black bold transform="uppercase">
             {locale === 'en' ? 'عربي' : 'English'}
           </Text>
+        </Button> */}
+
+        <Button
+          onPress={handleAvatar}
+          shadow={false}
+          radius={sizes.m}
+          marginHorizontal={sizes.sm}
+          color={colors.primary}
+          outlined={String(colors.white)}>
+          <Ionicons size={18} name="person" color={colors.white} />
         </Button>
       </Block>
     ),

@@ -12,6 +12,7 @@ const Footer = () => {
   return (
     <View
       style={{
+        marginBottom: sizes.sm,
         justifyContent: 'center',
         alignItems: 'flex-end',
         backgroundColor: '#fff',

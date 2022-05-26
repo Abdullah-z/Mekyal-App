@@ -2,7 +2,6 @@ import React from 'react';
 import Block from './Block';
 import {useTheme, useTranslation} from '../hooks/';
 import Text from './Text';
-import PDFview from './PDFview';
 import {View, Linking} from 'react-native';
 
 const TabAboutCompany = () => {

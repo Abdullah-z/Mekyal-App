@@ -1,9 +1,7 @@
 import React, {useCallback, useState} from 'react';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
-import {Block, Button, Image, Input, Product, Text} from '../components/';
-import ActiveOpportunities from '../components/ActiveOpportunities';
-import CompletedOpportunities from '../components/CompletedOpportunities';
+import {Block, Button, Text} from '../components/';
 import VideoPlayer from './VideoPlayer';
 import {ScrollView} from 'react-native-gesture-handler';
 import TabDetail from '../components/TabDetail';
@@ -16,7 +14,6 @@ const OpportunityDetails = () => {
   const {detailsTab, setDetailsTab} = useData();
   const [products, setProducts] = useState(detailsTab);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
-  const {locale, setLocale} = useTranslation();
   const handleProducts = useCallback(
     (tab: number) => {
       setTab(tab);
@@ -29,11 +26,10 @@ const OpportunityDetails = () => {
       <ScrollView>
         <Block color={'#f8f9fa'} paddingTop={sizes.sm}>
           <Block>
-            <VideoPlayer />
+            <VideoPlayer link={'UHQPdP8qgrk'} />
           </Block>
           <Block
             row
-            flex={0}
             align="center"
             justify="center"
             color={'#f8f9fa'}

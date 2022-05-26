@@ -1,10 +1,9 @@
+import {View, Text, TextInput} from 'react-native';
 import React, {useState} from 'react';
-import {Text, TextInput, View} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
 
-export default () => {
-  const [text, setText] = useState('');
-  console.log(text);
+const Test = () => {
+  const [text, setText] = useState('123');
+  console.log(text)
   return (
     <View style={{padding: 10}}>
       <TextInput
@@ -17,3 +16,6 @@ export default () => {
     </View>
   );
 };
+
+export default Test;
+export const text;

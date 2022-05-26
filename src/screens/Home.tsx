@@ -4,6 +4,7 @@ import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
 import ActiveOpportunities from '../components/ActiveOpportunities';
 import CompletedOpportunities from '../components/CompletedOpportunities';
+import {myvalue} from './Signin';
 
 const Home = () => {
   const {t} = useTranslation();
@@ -12,7 +13,7 @@ const Home = () => {
   const [products, setProducts] = useState(active);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
   const {locale, setLocale} = useTranslation();
-
+  console.log(myvalue);
   const handleLanguageButton = () => {
     locale === 'en' ? setLocale('ar') : setLocale('en');
   };

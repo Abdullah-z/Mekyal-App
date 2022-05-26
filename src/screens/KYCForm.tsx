@@ -5,23 +5,18 @@ import {useTheme, useTranslation} from '../hooks/';
 import {ScrollView} from 'react-native-gesture-handler';
 import * as Progress from 'react-native-progress';
 import {
-  Center,
   CheckIcon,
   FormControl,
   NativeBaseProvider,
   Radio,
   Select,
-  Stack,
   WarningOutlineIcon,
   Checkbox,
-  Box,
-  Heading,
-  Divider,
-  Flex,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/core';
 import AnnualIncome from '../components/AnnualIncome';
 import InvestmentSectors from '../components/InvestmentSectors';
+import CountriesList from '../components/Countries';
 
 const KYCForm = () => {
   const {t} = useTranslation();
@@ -33,7 +28,7 @@ const KYCForm = () => {
   const [name, setName] = useState('');
   const [gender, setgender] = useState('Male');
   const [cob, setcob] = useState('');
-  const [groupValue, setGroupValue] = React.useState([]);
+  const [groupValue, setGroupValue] = useState([]);
   const progressbar = KYCStep / 5;
   const [otherNationality, setOtherNationality] = useState('No');
   const [country, setcountry] = useState('');
@@ -51,6 +46,7 @@ const KYCForm = () => {
   const [approxannualIncome, setapproxannualIncome] = useState('');
   const [amountInvestedAnnually, setamountInvestedAnnually] = useState('');
   const [amountInvestedEachOp, setamountInvestedEachOp] = useState('');
+
   return (
     <>
       <View style={{alignItems: 'center', backgroundColor: '#fff'}}>
@@ -155,7 +151,7 @@ const KYCForm = () => {
                       </View>
                     </Radio.Group>
                   </NativeBaseProvider>
-                  {/* <Text bold>Country of Birth</Text> */}
+
                   <NativeBaseProvider>
                     <FormControl w="3/4" maxW="340" isRequired>
                       <FormControl.Label>{t('common.cob')}</FormControl.Label>
@@ -172,14 +168,15 @@ const KYCForm = () => {
                           endIcon: <CheckIcon size={5} />,
                         }}
                         mt="1">
-                        <Select.Item label="Pakistan" value="Pakistan" />
-                        <Select.Item
-                          label="Saudi Arabia"
-                          value="Saudi Arabia"
-                        />
-                        <Select.Item label="UAE" value="UAE" />
-                        <Select.Item label="Turkey" value="Turkey" />
-                        <Select.Item label="Qatar" value="Qatar" />
+                        {CountriesList.map((index) => {
+                          return (
+                            <Select.Item
+                              label={index.name}
+                              value={index.value}
+                              key={index.value}
+                            />
+                          );
+                        })}
                       </Select>
                       <FormControl.ErrorMessage
                         leftIcon={<WarningOutlineIcon size="xs" />}>
@@ -236,14 +233,15 @@ const KYCForm = () => {
                           endIcon: <CheckIcon size={5} />,
                         }}
                         mt="1">
-                        <Select.Item label="Pakistan" value="Pakistan" />
-                        <Select.Item
-                          label="Saudi Arabia"
-                          value="Saudi Arabia"
-                        />
-                        <Select.Item label="UAE" value="UAE" />
-                        <Select.Item label="Turkey" value="Turkey" />
-                        <Select.Item label="Qatar" value="Qatar" />
+                        {CountriesList.map((index) => {
+                          return (
+                            <Select.Item
+                              label={index.name}
+                              value={index.value}
+                              key={index.value}
+                            />
+                          );
+                        })}
                       </Select>
                       <FormControl.ErrorMessage
                         leftIcon={<WarningOutlineIcon size="xs" />}>
@@ -327,7 +325,7 @@ const KYCForm = () => {
                       width={'40%'}
                       primary
                       marginHorizontal={sizes.sm}>
-                      <Text bold primary transform="uppercase" color={'#fff'}>
+                      <Text bold primary transform="uppercase" color={'#fff'}> 
                         {t('common.back')}
                       </Text>
                     </Button>
@@ -755,6 +753,8 @@ const KYCForm = () => {
             <Block card>
               <Text
                 h4
+                paddingBottom={sizes.sm}
+                semibold
                 marginBottom={sizes.sm}
                 style={{borderBottomColor: 'grey', borderBottomWidth: 2}}
                 align="center">
@@ -782,7 +782,15 @@ const KYCForm = () => {
               </Text>
               <Text color={colors.primary}>Address</Text>
               <Text h5 marginBottom={sizes.sm}>
-                Dummy Address
+                {unitNum +
+                  ', ' +
+                  streetName +
+                  ', ' +
+                  zipCode +
+                  ', ' +
+                  city +
+                  ', ' +
+                  country}
               </Text>
               <Text color={colors.primary}>Education</Text>
               <Text h5 marginBottom={sizes.sm}>
@@ -806,7 +814,9 @@ const KYCForm = () => {
 
             <Block card marginTop={sizes.sm}>
               <Text
+              semibold
                 h4
+                paddingBottom={sizes.sm}
                 marginBottom={sizes.sm}
                 style={{borderBottomColor: 'grey', borderBottomWidth: 2}}
                 align="center">

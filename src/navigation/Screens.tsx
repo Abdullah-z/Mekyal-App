@@ -27,6 +27,9 @@ import KYC2 from '../screens/KYC2';
 import KYC3 from '../screens/KYC3';
 import KYCForm from '../screens/KYCForm';
 import UserProfile from '../screens/UserProfile';
+import ChangePassword from '../screens/ChangePassword';
+import EditProfile from '../screens/EditProfile';
+import Test2 from '../screens/Test2';
 
 const Stack = createStackNavigator();
 
@@ -124,7 +127,7 @@ export default () => {
       />
       <Stack.Screen
         name="Test"
-        component={Test}
+        component={Test2}
         options={{headerShown: false}}
       />
       <Stack.Screen
@@ -142,11 +145,24 @@ export default () => {
         component={KYCForm}
         options={{headerShown: true}}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="Profile"
         component={UserProfile}
         options={{headerShown: true}}
       />
+
+      <Stack.Screen
+        name="Change Password"
+        component={ChangePassword}
+        options={{headerShown: true}}
+      />
+
+      <Stack.Screen
+        name="Edit Profile"
+        component={EditProfile}
+        options={{headerShown: true}}
+      />
+
       <Stack.Screen name="KYC" component={KYC} options={{headerShown: true}} />
     </Stack.Navigator>
   );

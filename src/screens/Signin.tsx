@@ -28,10 +28,8 @@ interface IRegistrationValidation {
 }
 
 const Signin = () => {
-  const {isDark} = useData();
   const {t} = useTranslation();
   const navigation = useNavigation();
-  const {locale, setLocale} = useTranslation();
 
   const [isValid, setIsValid] = useState<IRegistrationValidation>({
     name: false,

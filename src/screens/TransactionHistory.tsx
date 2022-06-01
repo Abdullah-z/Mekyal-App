@@ -5,6 +5,7 @@ import {useData, useTheme, useTranslation} from '../hooks/';
 import {ScrollView} from 'react-native-gesture-handler';
 import Popup from '../components/Popup';
 import TransactionCard from '../components/TransactionCard';
+import BottomNavigation from './BottomNavigation';
 
 const TransactionHistory = () => {
   const {t} = useTranslation();
@@ -17,7 +18,7 @@ const TransactionHistory = () => {
             width={'95%'}
             card
             align="center"
-            color={colors.primary}  
+            color={colors.primary}
             marginHorizontal={sizes.sm}
             marginVertical={sizes.sm}>
             <Text h5 color={'white'} marginTop={sizes.sm}>
@@ -58,6 +59,16 @@ const TransactionHistory = () => {
           </Block>
         </Block>
       </ScrollView>
+      <View style={{marginTop: 50}}>
+        <View
+          style={{
+            width: '100%',
+            position: 'absolute',
+            bottom: 0,
+          }}>
+          <BottomNavigation initial={2} />
+        </View>
+      </View>
     </>
   );
 };

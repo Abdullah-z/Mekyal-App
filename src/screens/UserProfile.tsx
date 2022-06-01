@@ -2,15 +2,16 @@ import {View, ScrollView} from 'react-native';
 import React from 'react';
 import {Block, Text} from '../components';
 import {useTheme, useTranslation} from '../hooks/';
-import {Center} from 'native-base';
 import {Ionicons} from '@expo/vector-icons';
+import {useNavigation} from '@react-navigation/core';
 
 const UserProfile = () => {
-  const {assets, colors, fonts, gradients, sizes} = useTheme();
+  const {colors, sizes} = useTheme();
   const {t} = useTranslation();
+  const navigation = useNavigation();
   return (
     <ScrollView>
-      <Block align={'center'} >
+      <Block align={'center'}>
         <Block card color={colors.primary} margin={sizes.sm} width={'95%'}>
           <View>
             <Text semibold h4 color={'white'}>
@@ -44,10 +45,20 @@ const UserProfile = () => {
           </View>
         </Block>
         <Block card width={'95%'} marginBottom={sizes.sm}>
-          <Text h5 marginVertical={sizes.sm}>
+          <Text
+            h5
+            marginVertical={sizes.sm}
+            onPress={() => {
+              navigation.navigate('Edit Profile');
+            }}>
             <Ionicons size={20} name="person" color={colors.black} /> Account
           </Text>
-          <Text h5 marginBottom={sizes.sm}>
+          <Text
+            h5
+            marginBottom={sizes.sm}
+            onPress={() => {
+              navigation.navigate('Change Password');
+            }}>
             <Ionicons size={20} name="key" color={colors.black} /> Change
             Password
           </Text>
@@ -56,7 +67,13 @@ const UserProfile = () => {
             Support
           </Text>
           <View style={{alignItems: 'center', marginTop: sizes.md}}>
-            <Text h5 marginBottom={sizes.sm} color={'red'}>
+            <Text
+              h5
+              marginBottom={sizes.sm}
+              color={'red'}
+              onPress={() => {
+                navigation.navigate('Sign In');
+              }}>
               <Ionicons size={20} name="power" color={'red'} /> Logout
             </Text>
           </View>

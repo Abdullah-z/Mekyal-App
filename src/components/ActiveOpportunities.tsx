@@ -95,7 +95,6 @@ const ActiveOpportunities = () => {
             </Block>
           </Image>
         </Block>
-        <Block row marginTop={sizes.sm}></Block>
       </Block>
     </ScrollView>
   );

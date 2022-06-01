@@ -43,7 +43,7 @@
     "entrepreneur":"Entrepreneur",
     "phonenum":"Phone Number",
     "phonehelptext":"* Phone Number format should be 9665xxxxxxxx",
-    "passwordhelptext":"* min 8, max 15 chararcters, Contains upper case, Lowercase letters and Number.",
+    "passwordhelptext":"* Min 8, Max 15 chararcters, Contains upper case, Lowercase letters and Number.",
     "confirmpassword":"Confirm Password",
     "signin": "Sign In",
     "alreadyuser":"Already registered user?",

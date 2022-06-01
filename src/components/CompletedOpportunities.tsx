@@ -20,15 +20,15 @@ const CompletedOpportunities = () => {
       <Block paddingHorizontal={sizes.padding}>
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate('Details')}>
-          <Block card marginTop={sizes.sm}>
+          <Block card marginBottom={sizes.sm}>
             <View style={{alignItems: 'center'}}>
               <Image
+                resizeMode="stretch"
                 source={{
-                  uri: 'https://cdn.logojoy.com/wp-content/uploads/2018/05/04120129/1864.png',
+                  uri: 'https://images.template.net/wp-content/uploads/2017/03/22122756/Abstract-Modern-Fitness-Logo1.jpg',
                 }}
                 width={'100%'}
                 height={200}
-                marginVertical={sizes.sm}
               />
             </View>
             <Text
@@ -105,41 +105,52 @@ const CompletedOpportunities = () => {
             </Block>
           </Block>
         </TouchableWithoutFeedback>
-        {/* <Block card marginTop={sizes.sm}>
+        <Block card marginBottom={sizes.sm}>
           <View style={{alignItems: 'center'}}>
             <Image
+              resizeMode="stretch"
               source={{
-                uri: 'https://i.pinimg.com/originals/86/68/73/8668736548784a8c4a62743978112de5.jpg',
+                uri: 'https://t4.ftcdn.net/jpg/01/03/93/99/360_F_103939904_504aq3PIe3pH6HGEa4W6JaoBueVve8da.jpg',
               }}
               width={'100%'}
               height={200}
-              marginVertical={sizes.sm}
             />
           </View>
           <Text
-            h5
+            h4
             bold
+            center
             transform="uppercase"
             color={colors.primary}
             marginTop={sizes.sm}>
-            Gas Company
+            Oil and Gas Company
           </Text>
 
           <Block row marginVertical={sizes.sm}>
             <Block align="center">
               <Text h5>4,999,948</Text>
-              <Text>Raised Amount (SAR)</Text>
+              <Text>
+                {t('common.raisedamount')} ({t('common.SAR')})
+              </Text>
             </Block>
           </Block>
 
-          <Block row marginVertical={sizes.sm}>
+          <Block
+            row
+            paddingVertical={sizes.sm}
+            marginVertical={sizes.sm}
+            style={{
+              borderBottomWidth: 1,
+              borderTopWidth: 1,
+              borderColor: '#D3D3D3',
+            }}>
             <Block align="center">
               <Text h5>23,200,000</Text>
-              <Text>Valuation</Text>
+              <Text>{t('common.valuation')}</Text>
             </Block>
             <Block align="center">
               <Text h5>4,999,948</Text>
-              <Text>Max Target</Text>
+              <Text>{t('common.maxtarget')}</Text>
             </Block>
             <Block align="center">
               <Text h5>116</Text>
@@ -147,6 +158,26 @@ const CompletedOpportunities = () => {
             </Block>
           </Block>
 
+          <Block style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
+            <Text h5 color={colors.primary} center>
+              {t('common.subscriptions')}
+            </Text>
+
+            <Block row marginVertical={sizes.sm}>
+              <Block align="center">
+                <Text h5>17,241</Text>
+                <Text> {t('common.average')}</Text>
+              </Block>
+              <Block align="center">
+                <Text h5>499,960</Text>
+                <Text> {t('common.highest')}</Text>
+              </Block>
+              <Block align="center">
+                <Text h5>1,044</Text>
+                <Text> {t('common.lowest')}</Text>
+              </Block>
+            </Block>
+          </Block>
           <Block row marginVertical={sizes.sm}>
             <Block align="center">
               <Text h5>01-Jun-2021</Text>
@@ -157,7 +188,7 @@ const CompletedOpportunities = () => {
               <Text>{t('common.to')}</Text>
             </Block>
           </Block>
-        </Block> */}
+        </Block>
       </Block>
     </ScrollView>
   );

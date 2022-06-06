@@ -22,7 +22,7 @@ import TransactionHistory from '../screens/TransactionHistory';
 import News from '../screens/News';
 import SignupInvestor2 from '../screens/SignupInvestor2';
 import KYC from '../screens/KYC';
-import Test from '../screens/Test';
+import Test from '../screens/BottomNavigation';
 import KYC2 from '../screens/KYC2';
 import KYC3 from '../screens/KYC3';
 import KYCForm from '../screens/KYCForm';
@@ -30,6 +30,7 @@ import UserProfile from '../screens/UserProfile';
 import ChangePassword from '../screens/ChangePassword';
 import EditProfile from '../screens/EditProfile';
 import Test2 from '../screens/Test2';
+import MyInvestments from '../screens/MyInvestments';
 
 const Stack = createStackNavigator();
 
@@ -160,6 +161,12 @@ export default () => {
       <Stack.Screen
         name="Edit Profile"
         component={EditProfile}
+        options={{headerShown: true}}
+      />
+
+      <Stack.Screen
+        name="My Investments"
+        component={MyInvestments}
         options={{headerShown: true}}
       />
 

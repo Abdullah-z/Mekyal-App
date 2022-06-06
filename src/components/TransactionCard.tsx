@@ -3,12 +3,21 @@ import React from 'react';
 import Block from './Block';
 import Text from './Text';
 import {useTheme} from '../hooks/';
+import {Ionicons} from '@expo/vector-icons';
+import {
+  Box,
+  Center,
+  HStack,
+  Icon,
+  NativeBaseProvider,
+  Pressable,
+} from 'native-base';
 
 const TransactionCard = () => {
   const {colors, sizes} = useTheme();
   return (
     <>
-      <Block card row color={'#C1FFD7'} marginTop={sizes.sm} justify={'center'}>
+      {/* <Block card row color={'#C1FFD7'} marginTop={sizes.sm} justify={'center'}>
         <Block
           color={'#fff'}
           align="center"
@@ -39,9 +48,9 @@ const TransactionCard = () => {
         <Block align="center" justify="center">
           <Text h5>100 SAR</Text>
         </Block>
-      </Block>
+      </Block> */}
 
-      <Block card row color={'#C1FFD7'} marginTop={sizes.sm} justify={'center'}>
+      {/* <Block card row color={'#C1FFD7'} marginTop={sizes.sm} justify={'center'}>
         <Block
           color={'#fff'}
           align="center"
@@ -67,37 +76,88 @@ const TransactionCard = () => {
         <Block align="center" justify="center">
           <Text h5>100 SAR</Text>
         </Block>
-      </Block>
+      </Block> */}
 
-      <Block
-        card
-        color={'#EF4B4B'}
-        row
-        marginTop={sizes.sm}
-        justify={'center'}
-        style={{width: '100%'}}>
-        <View col style={{width: '60%'}}>
-          <Block>
+      <NativeBaseProvider>
+        <Block
+          card
+          row
+          marginTop={sizes.sm}
+          justify={'center'}
+          style={{width: '100%'}}>
+          <View style={{width: '10%', justifyContent: 'center'}}>
+            <Icon
+              
+              as={<Ionicons name={'arrow-down-circle'} />}
+              color={'blue.500'}
+              size="2xl"
+            />
+          </View>
+
+          <View style={{width: '60%'}}>
             <Text semibold h5>
               Invested in Gasable
             </Text>
-          </Block>
-          <Block>
-            <Text>Mekyal Acoount</Text>
-          </Block>
-        </View>
 
-        <Block col>
-          <Block align="flex-end">
-            <Text semibold h4>
-              1000 SAR
-            </Text>
-          </Block>
-          <Block align="flex-end">
-            <Text>25 May 2022</Text>
+            <Text>Mekyal Acoount</Text>
+          </View>
+
+          <Block col width={'30%'}>
+            <Block align="flex-end" justify="center">
+              <Text bold h5>
+                1000 SAR
+              </Text>
+            </Block>
+            <Block align="flex-end">
+              <Text>25 May 2022</Text>
+            </Block>
           </Block>
         </Block>
-      </Block>
+        <Block
+          card
+          row
+          marginTop={sizes.sm}
+          justify={'center'}
+          style={{width: '100%'}}>
+          <View style={{width: '10%', justifyContent: 'center'}}>
+            <Icon
+              
+              as={<Ionicons name={'arrow-up-circle'} />}
+              color={'red.500'}
+              size="2xl"
+            />
+          </View>
+
+          <View style={{width: '60%'}}>
+            <Text semibold h5>
+              Withdraw
+            </Text>
+
+            <Text>Arab National Bank</Text>
+          </View>
+
+          <Block col width={'30%'}>
+            <Block align="flex-end" justify="center">
+              <Text bold h5>
+                500 SAR
+              </Text>
+            </Block>
+            <Block align="flex-end">
+              <Text>5 June 2022</Text>
+            </Block>
+          </Block>
+        </Block>
+
+
+
+
+
+
+
+
+
+        
+      </NativeBaseProvider>
     </>
   );
 };

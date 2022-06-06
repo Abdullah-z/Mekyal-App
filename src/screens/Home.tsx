@@ -14,7 +14,7 @@ const Home = () => {
   const {active, completed} = useData();
   const [products, setProducts] = useState(active);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
-  
+
   console.log(myvalue);
 
   const handleProducts = useCallback(
@@ -32,7 +32,7 @@ const Home = () => {
           align={'center'}
           paddingTop={sizes.sm}
           flex={0.9}>
-          <Text h4 color={'#00a69c'}>
+          <Text h4 semibold bold>
             {t('home.opportunities')}
           </Text>
 
@@ -85,6 +85,7 @@ const Home = () => {
           {tab === 0 ? <ActiveOpportunities /> : <CompletedOpportunities />}
         </Block>
       </ScrollView>
+
       <View style={{marginTop: 50}}>
         <View
           style={{
@@ -92,7 +93,7 @@ const Home = () => {
             position: 'absolute',
             bottom: 0,
           }}>
-          <BottomNavigation initial={1} />
+          <BottomNavigation tab={1} />
         </View>
       </View>
     </>

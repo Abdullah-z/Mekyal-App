@@ -66,6 +66,7 @@
     "investnow":"Invest Now",
     "SAR":"SAR",
     "raisedamount":"Raised Amount",
+    "targetamount":"Target Amount",
     "valuation":"Valuation",
     "maxtarget":"Max Target",
     "shareprice":"Share Price",
@@ -114,6 +115,10 @@
     "additionalnum":"Additional Number",
     "next":"Next",
     "back":"Back",
+    "documents":"Documents",
+    "transactionhistory":"Transaction History",
+    "duration":"Duration",
+    "moredetails":"More Details",
      "guests": {
       "one": "1 guest",
       "other": "{{count}} guests",
@@ -138,6 +143,7 @@
     "extra": "Extra - Automotive",
     "kyc":"KYC",
     "transactionHistory":"Transaction History",
+   
     "myInvestments":"My Investments",
     "generalAssembly":"General Assembly",
     "conflictofInterestsPolicy":"Conflict of Interests Policy",

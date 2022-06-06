@@ -73,119 +73,111 @@ const Signin = () => {
     <>
       <ScrollView style={{backgroundColor: '#fff'}}>
         <Block safe marginTop={sizes.md}>
-          <Block>
-            <MekyalLogo />
-            {/* <Block style={{alignItems: 'flex-end'}} marginHorizontal={sizes.sm}>
-              <Button
-                width={'25%'}
-                primary
-                outlined
-                shadow={!isAndroid}
-                marginVertical={sizes.s}
-                onPress={() => navigation.navigate('Test')}>
-                <Text bold primary transform="uppercase">
-                  Test
-                </Text>
-              </Button>
-            </Block> */}
-
-            <Block
-              flex={0}
-              card
-              margin={sizes.sm}
-              shadow={!isAndroid} // disabled shadow on Android due to blur overlay + elevation issue
-            >
+          <MekyalLogo />
+          <Block >
+            <Block >
               <Block
                 flex={0}
-                radius={sizes.sm}
-                overflow="hidden"
-                justify="space-evenly"
-                paddingVertical={sizes.sm}>
-                <Text h3 semibold color={colors.primary}>
-                  {t('common.signin')}
-                </Text>
-                <Text p semibold>
-                  {t('common.crowdfundingaccount')}
-                </Text>
-
+                card
+                margin={sizes.sm}
+                shadow={!isAndroid} // disabled shadow on Android due to blur overlay + elevation issue
+              >
                 <Block
-                  row
                   flex={0}
-                  align="center"
-                  justify="center"
-                  marginBottom={sizes.sm}
-                  paddingHorizontal={sizes.xxl}></Block>
-                {/* form inputs */}
-                <Block paddingHorizontal={sizes.sm}>
-                  <Input
-                    autoCapitalize="none"
-                    marginBottom={sizes.m}
-                    label={t('common.email')}
-                    keyboardType="email-address"
-                    placeholder={t('common.emailPlaceholder')}
-                    success={Boolean(registration.email && isValid.email)}
-                    danger={Boolean(registration.email && !isValid.email)}
-                    onChangeText={(value) => handleChange({email: value})}
-                  />
-                  <Input
-                    secureTextEntry
-                    autoCapitalize="none"
-                    marginBottom={sizes.m}
-                    label={t('common.password')}
-                    placeholder={t('common.passwordPlaceholder')}
-                    onChangeText={(value) => handleChange({password: value})}
-                    success={Boolean(registration.password && isValid.password)}
-                    danger={Boolean(registration.password && !isValid.password)}
-                  />
-                </Block>
-                {/* checkbox terms */}
-                <Block
-                  row
-                  flex={0}
-                  align="center"
-                  marginBottom={sizes.sm}
-                  paddingHorizontal={sizes.sm}>
-                  <Text
-                    color={colors.primary}
-                    semibold
-                    onPress={() => {
-                      Linking.openURL('https://www.creative-tim.com/terms');
-                    }}>
-                    {t('common.forgetpassword')}
-                  </Text>
-                </Block>
-
-                <Button
-                  width={'50%'}
-                  primary
-                  solid
-                  shadow={!isAndroid}
-                  marginVertical={sizes.s}
-                  marginHorizontal={'25%'}
-                  onPress={() => navigation.navigate('Home')}>
-                  <Text bold primary transform="uppercase" color={'#fff'}>
+                  radius={sizes.sm}
+                  overflow="hidden"
+                  justify="space-evenly"
+                  paddingVertical={sizes.sm}>
+                  <Text h3 semibold color={colors.primary}>
                     {t('common.signin')}
                   </Text>
-                </Button>
-                <Block marginVertical={sizes.sm}>
-                  <Text>
-                    {t('common.donthaveaccount')}{' '}
+                  <Text p semibold>
+                    {t('common.crowdfundingaccount')}
+                  </Text>
+
+                  <Block paddingHorizontal={sizes.sm}>
+                    <Input
+                      autoCapitalize="none"
+                      marginBottom={sizes.m}
+                      label={t('common.email')}
+                      keyboardType="email-address"
+                      placeholder={t('common.emailPlaceholder')}
+                      success={Boolean(registration.email && isValid.email)}
+                      danger={Boolean(registration.email && !isValid.email)}
+                      onChangeText={(value) => handleChange({email: value})}
+                    />
+                    <Input
+                      secureTextEntry
+                      autoCapitalize="none"
+                      marginBottom={sizes.m}
+                      label={t('common.password')}
+                      placeholder={t('common.passwordPlaceholder')}
+                      onChangeText={(value) => handleChange({password: value})}
+                      success={Boolean(
+                        registration.password && isValid.password,
+                      )}
+                      danger={Boolean(
+                        registration.password && !isValid.password,
+                      )}
+                    />
+                  </Block>
+                  {/* checkbox terms */}
+                  <Block
+                    row
+                    flex={0}
+                    align="center"
+                    marginBottom={sizes.sm}
+                    paddingHorizontal={sizes.sm}>
                     <Text
                       color={colors.primary}
                       semibold
                       onPress={() => {
-                        navigation.navigate('Sign Up As');
+                        Linking.openURL('https://www.creative-tim.com/terms');
                       }}>
-                      {t('common.signuphere')}
+                      {t('common.forgetpassword')}
                     </Text>
-                  </Text>
+                  </Block>
+
+                  <Button
+                    width={'50%'}
+                    primary
+                    solid
+                    shadow={!isAndroid}
+                    marginVertical={sizes.s}
+                    marginHorizontal={'25%'}
+                    onPress={() => navigation.navigate('Home')}>
+                    <Text bold primary transform="uppercase" color={'#fff'}>
+                      {t('common.signin')}
+                    </Text>
+                  </Button>
+                  <Block marginVertical={sizes.sm}>
+                    <Text>
+                      {t('common.donthaveaccount')}{' '}
+                      <Text
+                        color={colors.primary}
+                        semibold
+                        onPress={() => {
+                          navigation.navigate('Sign Up As');
+                        }}>
+                        {t('common.signuphere')}
+                      </Text>
+                    </Text>
+                  </Block>
                 </Block>
               </Block>
+              <View style={{marginTop: 50}}>
+                <View
+                  style={{
+                    width: '100%',
+                    position: 'absolute',
+                    bottom: 0,
+                  }}>
+                  <Footer />
+                </View>
+              </View>
             </Block>
           </Block>
         </Block>
-
-        <Footer />
       </ScrollView>
     </>
   );

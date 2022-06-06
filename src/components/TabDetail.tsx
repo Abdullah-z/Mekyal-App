@@ -2,120 +2,179 @@ import React from 'react';
 import Block from './Block';
 import {useTheme} from '../hooks/';
 import Text from './Text';
-import * as Progress from 'react-native-progress';
 import {t} from 'i18n-js';
+import {ScrollView, View} from 'react-native';
+import StatsCard from './StatsCard';
+import VideoPlayer from '../screens/VideoPlayer';
+import {Badge, Box, Center, NativeBaseProvider, Progress} from 'native-base';
 
 const TabDetail = () => {
   const {colors, sizes} = useTheme();
   return (
-    <Block card marginVertical={sizes.sm} width={'95%'}>
-      <Block marginTop={sizes.sm} row align="center">
-        <Block align="center">
-          <Text h5>4.9M</Text>
-          <Text>{t('common.raisedamount')}</Text>
+    <ScrollView>
+      <View style={{marginHorizontal: sizes.sm, marginVertical: sizes.sm}}>
+        {/* <Block card>
+          <VideoPlayer link={'X_9VoqR5ojM'} />
+        </Block> */}
+        <Block card marginTop={sizes.sm}>
+          <Text h4 color={colors.primary}>
+            VFitness
+          </Text>
+          <Text>
+            V Fitness, established in 2018, is engaged in providing health and
+            fitness services with an aim to promote healthier lifestyle and
+            improve quality of life in-line with the Vision 2030. V Fitness
+            currently has a network of eight gyms across three brands - Fitness
+            Star, Vitality and Lava Fitness - with a total area of more than
+            20,000 sqm. V Fitness works at different levels for a wider target
+            group through its diverse fitness service offerings to promote human
+            well-being in terms of health and fitness. Going forward, the
+            Company expects to use artificial intelligence and data analytics
+            tools to reach a wider target audience, with technology being the
+            catalyst for the company’s growth, and becoming a real contributor
+            to the national economy. V Fitness seeks to continue expanding its
+            network of gyms to other major cities in the Kingdom.
+          </Text>
         </Block>
-        <Block align="center">
-          <Text h5>0</Text>
-          <Text>{t('common.raisedamount')}</Text>
-        </Block>
-      </Block>
-      <Block align="center" marginVertical={sizes.sm}>
-        <Progress.Bar
-          progress={0.9}
-          width={250}
-          height={10}
-          color={colors.primary}
-        />
-      </Block>
-      <Block
-        row
-        paddingVertical={sizes.sm}
-        marginVertical={sizes.sm}
-        style={{
-          borderBottomWidth: 1,
-          borderTopWidth: 1,
-          borderColor: '#D3D3D3',
-        }}>
-        <Block align="center">
-          <Text h5>23.2M</Text>
-          <Text>{t('common.valuation')}</Text>
-        </Block>
-        <Block align="center">
-          <Text h5>4.9M</Text>
-          <Text>{t('common.maxtarget')}</Text>
-        </Block>
-        <Block align="center">
-          <Text h5>116</Text>
-          <Text>{t('common.shareprice')}</Text>
-        </Block>
-      </Block>
 
-      <Block style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
-        <Text h5 color={colors.primary} center>
+        <Block card marginVertical={sizes.sm}>
+          <StatsCard />
+        </Block>
+
+        <Block card>
+          <Block row marginVertical={sizes.sm}>
+            <Block align="center">
+              <Block>
+                <Block row marginVertical={sizes.sm}>
+                  <View style={{width: '80%', flexDirection: 'row'}}>
+                    <Text>Raised Amount:</Text>
+                    <Text bold> 2,500,000 SAR</Text>
+                  </View>
+                  <View style={{width: '20%', alignItems: 'flex-end'}}>
+                    <Text bold color="#267E00">
+                      52%
+                    </Text>
+                  </View>
+                </Block>
+                <NativeBaseProvider>
+                  <Center w="100%">
+                    <Box w="100%" maxW="400">
+                      <Progress
+                        value={52}
+                        mx="4"
+                        bg="coolGray.100"
+                        _filledTrack={{
+                          bg: '#267E00',
+                        }}
+                      />
+                    </Box>
+                  </Center>
+                </NativeBaseProvider>
+                <Block row marginVertical={sizes.sm}>
+                  <View style={{width: '70%', flexDirection: 'row'}}>
+                    <Text>Target Amount:</Text>
+                    <Text bold> 4,900,000 SAR</Text>
+                  </View>
+                  <View style={{width: '30%', alignItems: 'flex-end'}}>
+                    <NativeBaseProvider>
+                      <Badge colorScheme="error" alignSelf="center">
+                        125 Days Left
+                      </Badge>
+                    </NativeBaseProvider>
+                  </View>
+                </Block>
+              </Block>
+            </Block>
+          </Block>
+        </Block>
+
+        {/* <VideoPlayer videoId='F948QZMGlHQ'></VideoPlayer> */}
+      </View>
+
+      {/* <Block card marginHorizontal={sizes.sm} marginTop={sizes.sm} marginBottom={sizes.sm}>
+        <Text h4 color={colors.primary} marginBottom={sizes.sm}>
+          Details
+        </Text>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.valuation')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              80,012,236
+            </Text>
+          </View>
+        </View>
+
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.maxtarget')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              4,999,804
+            </Text>
+          </View>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.shareprice')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              244
+            </Text>
+          </View>
+        </View>
+
+        <Text h5 color={colors.primary} marginTop={sizes.sm}>
           {t('common.subscriptions')}
         </Text>
 
-        <Block row marginVertical={sizes.sm}>
-          <Block align="center">
-            <Text h5>17.2k</Text>
-            <Text>{t('common.average')}</Text>
-          </Block>
-          <Block align="center">
-            <Text h5>499k</Text>
-            <Text>{t('common.highest')}</Text>
-          </Block>
-          <Block align="center">
-            <Text h5>1.04k</Text>
-            <Text>{t('common.lowest')}</Text>
-          </Block>
-        </Block>
-      </Block>
-      <Block
-        marginTop={sizes.sm}
-        style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
-        <Text h5 color={colors.primary} center>
-          {t('common.sharesallowed')}
-        </Text>
-
-        <Block row marginVertical={sizes.sm}>
-          <Block align="center">
-            <Text h5>9</Text>
-            <Text>{t('common.minimum')}</Text>
-          </Block>
-          <Block align="center">
-            <Text h5>172</Text>
-            <Text>{t('common.maximum')}</Text>
-          </Block>
-        </Block>
-      </Block>
-
-      <Block style={{borderBottomWidth: 1, borderColor: '#D3D3D3'}}>
-        <Block row marginVertical={sizes.sm}>
-          <Block align="center">
-            <Text h5>14</Text>
-            <Text>{t('common.currentinvestors')}</Text>
-          </Block>
-        </Block>
-      </Block>
-
-      <Block row marginVertical={sizes.sm}>
-        <Block align="center">
-          <Text h5>01-Jun-2021</Text>
-          <Text>{t('common.from')}</Text>
-        </Block>
-        <Block align="center">
-          <Text h5>31-Jul-2021</Text>
-          <Text>{t('common.to')}</Text>
-        </Block>
-      </Block>
-      <Block row marginVertical={sizes.sm}>
-        <Block align="center">
-          <Text h5 color={'red'}>
-            {t('common.closed')}
-          </Text>
-        </Block>
-      </Block>
-    </Block>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.average')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              7,587
+            </Text>
+          </View>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.maximum')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              488,000
+            </Text>
+          </View>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{width: '50%'}}>
+            <Text h5 align="left">
+              {t('common.minimum')}
+            </Text>
+          </View>
+          <View style={{width: '50%'}}>
+            <Text h5 bold align="right">
+              1,220
+            </Text>
+          </View>
+        </View>
+      </Block> */}
+    </ScrollView>
   );
 };
 

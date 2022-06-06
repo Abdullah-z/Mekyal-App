@@ -66,6 +66,7 @@
     "investnow":"استثمر الآن",
     "SAR":"ريال",
     "raisedamount":"رفع المبلغ",
+    "targetamount":"المبلغ المستهدف",
     "valuation":"تقييم",
     "maxtarget":"الهدف الأقصى",
     "shareprice":"شارك السعر",
@@ -114,6 +115,10 @@
     "additionalnum":"رقم إضافي",
     "next":"التالي",
     "back":"الى الخلف",
+    "documents":"مستندات",
+    "duration":"المدة الزمنية",
+    "moredetails":"المزيد من التفاصيل",
+    "transactionhistory": "سجل العملية",
     "guests": {
       "one": "1 guest",
       "other": "{{count}} guests",

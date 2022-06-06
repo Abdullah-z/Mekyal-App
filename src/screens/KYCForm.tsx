@@ -459,7 +459,7 @@ const KYCForm = () => {
                       </View>
                     </Radio.Group>
 
-                    {otherNationality === 'true' ? (
+                    {otherNationality === 'Yes' ? (
                       <FormControl w="3/4" maxW="340" isRequired>
                         <FormControl.Label>Country</FormControl.Label>
                         <Select

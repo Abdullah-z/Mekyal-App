@@ -162,7 +162,7 @@ const SignupInvestor2 = () => {
                 <Text> {t('common.agreeelmterms')}</Text>
               </View>
 
-              <FormControl maxW="340" isRequired>
+              {/* <FormControl maxW="340" isRequired>
                 <FormControl.Label>Month</FormControl.Label>
                 <Select
                   minWidth="200"
@@ -187,7 +187,7 @@ const SignupInvestor2 = () => {
                   leftIcon={<WarningOutlineIcon size="xs" />}>
                   Please make a selection!
                 </FormControl.ErrorMessage>
-              </FormControl>
+              </FormControl> */}
             </NativeBaseProvider>
 
             <Button

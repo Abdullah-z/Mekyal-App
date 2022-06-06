@@ -1,13 +1,18 @@
 import React from 'react';
+import {View} from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
-import {Block} from '../components';
+
 import {useTheme} from '../hooks/';
 const VideoPlayer = (props) => {
   const {sizes} = useTheme();
   return (
-    <Block marginHorizontal={sizes.sm}>
-      <YoutubePlayer height={225} play={false} videoId={props.link} />
-    </Block>
+    <View>
+      <YoutubePlayer
+        height={190}
+        videoId={props.link}
+        webViewStyle={{opacity: 0.99}}
+      />
+    </View>
   );
 };
 

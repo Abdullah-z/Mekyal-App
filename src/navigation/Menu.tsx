@@ -97,7 +97,11 @@ const DrawerContent = (
       to: 'Transaction History',
       icon: assets.document,
     },
-    {name: t('screens.myInvestments'), to: 'Pro', icon: assets.rental},
+    {
+      name: t('screens.myInvestments'),
+      to: 'My Investments',
+      icon: assets.rental,
+    },
     {name: t('screens.generalAssembly'), to: 'Profile', icon: assets.profile},
     {
       name: t('screens.conflictofInterestsPolicy'),

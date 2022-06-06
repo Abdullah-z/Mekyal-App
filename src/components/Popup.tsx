@@ -23,10 +23,9 @@ function Popup() {
         width={'120%'}
         marginHorizontal={sizes.sm}
         onPress={toggleModal}
-        solid
-        color={colors.primary}
+        color={'white'}
         marginVertical={sizes.s}>
-        <Text semibold color={'#fff'}>
+        <Text semibold color={colors.primary}>
           {t('common.withdraw')}
         </Text>
       </Button>

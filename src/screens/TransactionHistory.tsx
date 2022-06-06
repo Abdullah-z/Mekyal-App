@@ -20,7 +20,7 @@ const TransactionHistory = () => {
             align="center"
             color={colors.primary}
             marginHorizontal={sizes.sm}
-            marginVertical={sizes.sm}>
+            marginTop={sizes.sm}>
             <Text h5 color={'white'} marginTop={sizes.sm}>
               {t('common.totalbalance')}
             </Text>
@@ -29,7 +29,6 @@ const TransactionHistory = () => {
                 500004
               </Text>
               <Text h5 color={'white'}>
-                {' '}
                 {t('common.SAR')}
               </Text>
             </Block>
@@ -40,9 +39,9 @@ const TransactionHistory = () => {
             <Text h5 color={'white'} marginBottom={sizes.sm}>
               Arab National Bank
             </Text>
-          </Block>
-          <Block>
-            <Popup />
+            <Block>
+              <Popup />
+            </Block>
           </Block>
 
           <Block
@@ -52,13 +51,14 @@ const TransactionHistory = () => {
             width={'95%'}
             marginVertical={sizes.sm}>
             <Text h5 marginTop={sizes.sm} color={colors.primary}>
-              Transaction History
+            {t('common.transactionhistory')}
             </Text>
             <TransactionCard />
             <Block width={'100%'}></Block>
           </Block>
         </Block>
       </ScrollView>
+
       <View style={{marginTop: 50}}>
         <View
           style={{
@@ -66,7 +66,7 @@ const TransactionHistory = () => {
             position: 'absolute',
             bottom: 0,
           }}>
-          <BottomNavigation initial={2} />
+          <BottomNavigation tab={2} />
         </View>
       </View>
     </>

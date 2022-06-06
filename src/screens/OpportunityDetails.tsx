@@ -5,39 +5,24 @@ import {Block, Button, Text} from '../components/';
 import VideoPlayer from './VideoPlayer';
 import {ScrollView} from 'react-native-gesture-handler';
 import TabDetail from '../components/TabDetail';
-import TabAboutCompany from '../components/TabAboutCompany';
+import TabDocuments from '../components/TabDocuments';
 import TabInvestNow from '../components/TabInvestNow';
 
 const OpportunityDetails = () => {
   const {t} = useTranslation();
-  const [tab, setTab] = useState<number>(0);
-  const {detailsTab, setDetailsTab} = useData();
-  const [products, setProducts] = useState(detailsTab);
-  const {assets, colors, fonts, gradients, sizes} = useTheme();
-  const handleProducts = useCallback(
-    (tab: number) => {
-      setTab(tab);
-    },
-    [detailsTab, setDetailsTab, setTab, setProducts],
-  );
-
+  const {colors, fonts, sizes} = useTheme();
+  const [tab, setTab] = useState(0);
   return (
     <>
       <ScrollView>
-        <Block color={'#f8f9fa'} paddingTop={sizes.sm}>
-          <Block>
-            <VideoPlayer link={'UHQPdP8qgrk'} />
-          </Block>
-          <Block
-            row
-            align="center"
-            justify="center"
-            color={'#f8f9fa'}
-            paddingBottom={sizes.sm}>
-            <Button onPress={() => handleProducts(0)}>
+        <Block  margin={sizes.sm}>
+          <VideoPlayer link={'X_9VoqR5ojM'} />
+        </Block>
+        <Block color={'#f8f9fa'}>
+          <Block row align="center" justify="center" color={'#f8f9fa'}>
+            <Button onPress={() => setTab(0)}>
               <Block row align="center">
                 <Text
-                  p
                   color={'#00a69c'}
                   style={
                     tab === 0
@@ -57,7 +42,7 @@ const OpportunityDetails = () => {
               marginHorizontal={sizes.sm}
               height={sizes.socialIconSize}
             />
-            <Button onPress={() => handleProducts(1)}>
+            <Button onPress={() => setTab(1)}>
               <Block row align="center">
                 <Text
                   p
@@ -68,7 +53,7 @@ const OpportunityDetails = () => {
                       : {textDecorationLine: 'none'}
                   }
                   font={fonts?.[tab === 1 ? 'medium' : 'normal']}>
-                  {t('common.aboutcompany')}
+                  {t('common.documents')}
                 </Text>
               </Block>
             </Button>
@@ -80,7 +65,7 @@ const OpportunityDetails = () => {
               marginHorizontal={sizes.sm}
               height={sizes.socialIconSize}
             />
-            <Button onPress={() => handleProducts(2)}>
+            <Button onPress={() => setTab(2)}>
               <Block row align="center">
                 <Text
                   p
@@ -96,9 +81,10 @@ const OpportunityDetails = () => {
               </Block>
             </Button>
           </Block>
+
           <Block align="center">
             {tab === 1 ? (
-              <TabAboutCompany />
+              <TabDocuments />
             ) : tab === 2 ? (
               <TabInvestNow />
             ) : (
